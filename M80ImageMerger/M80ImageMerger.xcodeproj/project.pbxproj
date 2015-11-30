@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		97E721EEC221B0FAB2CF17D4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11ADF47204015D8D008F3D /* libPods.a */; };
+		E412AD9F1C07F773004CC10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E412AD9E1C07F773004CC10B /* main.m */; };
+		E412ADA21C07F773004CC10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADA11C07F773004CC10B /* AppDelegate.m */; };
+		E412ADA51C07F773004CC10B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADA41C07F773004CC10B /* ViewController.m */; };
+		E412ADA81C07F773004CC10B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E412ADA61C07F773004CC10B /* Main.storyboard */; };
+		E412ADAA1C07F773004CC10B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E412ADA91C07F773004CC10B /* Assets.xcassets */; };
+		E412ADAD1C07F773004CC10B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E412ADAB1C07F773004CC10B /* LaunchScreen.storyboard */; };
+		E412ADBA1C07FC13004CC10B /* M80ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADB91C07FC13004CC10B /* M80ImageViewController.m */; };
+		E412ADBD1C080144004CC10B /* UIImage+M80.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADBC1C080144004CC10B /* UIImage+M80.m */; };
+		E412ADC41C08015D004CC10B /* M80ImageFingerprint.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADBF1C08015D004CC10B /* M80ImageFingerprint.m */; };
+		E412ADC51C08015D004CC10B /* M80ImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADC11C08015D004CC10B /* M80ImageGenerator.m */; };
+		E412ADC61C08015D004CC10B /* M80ImageMergeInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = E412ADC31C08015D004CC10B /* M80ImageMergeInfo.mm */; };
+		E412ADC81C080346004CC10B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E412ADC71C080346004CC10B /* libz.tbd */; };
+		E412ADCB1C082883004CC10B /* M80ImageMergeInfoGenerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = E412ADCA1C082883004CC10B /* M80ImageMergeInfoGenerator.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		13EBA72F901AC27C7AC914BB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		4D11ADF47204015D8D008F3D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		80613CF678067F0480DF43AA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E412AD9A1C07F773004CC10B /* M80ImageMerger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M80ImageMerger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E412AD9E1C07F773004CC10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E412ADA01C07F773004CC10B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E412ADA11C07F773004CC10B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E412ADA31C07F773004CC10B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E412ADA41C07F773004CC10B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E412ADA71C07F773004CC10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E412ADA91C07F773004CC10B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E412ADAC1C07F773004CC10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E412ADAE1C07F773004CC10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E412ADB81C07FC13004CC10B /* M80ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageViewController.h; sourceTree = "<group>"; };
+		E412ADB91C07FC13004CC10B /* M80ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80ImageViewController.m; sourceTree = "<group>"; };
+		E412ADBB1C080144004CC10B /* UIImage+M80.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+M80.h"; sourceTree = "<group>"; };
+		E412ADBC1C080144004CC10B /* UIImage+M80.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+M80.m"; sourceTree = "<group>"; };
+		E412ADBE1C08015D004CC10B /* M80ImageFingerprint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageFingerprint.h; sourceTree = "<group>"; };
+		E412ADBF1C08015D004CC10B /* M80ImageFingerprint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80ImageFingerprint.m; sourceTree = "<group>"; };
+		E412ADC01C08015D004CC10B /* M80ImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageGenerator.h; sourceTree = "<group>"; };
+		E412ADC11C08015D004CC10B /* M80ImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80ImageGenerator.m; sourceTree = "<group>"; };
+		E412ADC21C08015D004CC10B /* M80ImageMergeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageMergeInfo.h; sourceTree = "<group>"; };
+		E412ADC31C08015D004CC10B /* M80ImageMergeInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = M80ImageMergeInfo.mm; sourceTree = "<group>"; };
+		E412ADC71C080346004CC10B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E412ADC91C082883004CC10B /* M80ImageMergeInfoGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageMergeInfoGenerator.h; sourceTree = "<group>"; };
+		E412ADCA1C082883004CC10B /* M80ImageMergeInfoGenerator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = M80ImageMergeInfoGenerator.mm; sourceTree = "<group>"; };
+		E4150BB21C0851F000EFB4F5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		E4150BB31C0851F000EFB4F5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E412AD971C07F773004CC10B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E412ADC81C080346004CC10B /* libz.tbd in Frameworks */,
+				97E721EEC221B0FAB2CF17D4 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42925B1628401C5D35BEBCC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E412ADC71C080346004CC10B /* libz.tbd */,
+				4D11ADF47204015D8D008F3D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78865F6C4C7B6417DA31655E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80613CF678067F0480DF43AA /* Pods.debug.xcconfig */,
+				13EBA72F901AC27C7AC914BB /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E412AD911C07F773004CC10B = {
+			isa = PBXGroup;
+			children = (
+				E412AD9C1C07F773004CC10B /* M80ImageMerger */,
+				E412AD9B1C07F773004CC10B /* Products */,
+				78865F6C4C7B6417DA31655E /* Pods */,
+				42925B1628401C5D35BEBCC2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E412AD9B1C07F773004CC10B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E412AD9A1C07F773004CC10B /* M80ImageMerger.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E412AD9C1C07F773004CC10B /* M80ImageMerger */ = {
+			isa = PBXGroup;
+			children = (
+				E412ADB41C07FB7B004CC10B /* Classes */,
+				E412ADA01C07F773004CC10B /* AppDelegate.h */,
+				E412ADA11C07F773004CC10B /* AppDelegate.m */,
+				E412ADA31C07F773004CC10B /* ViewController.h */,
+				E412ADA41C07F773004CC10B /* ViewController.m */,
+				E412ADA61C07F773004CC10B /* Main.storyboard */,
+				E412ADA91C07F773004CC10B /* Assets.xcassets */,
+				E412ADAB1C07F773004CC10B /* LaunchScreen.storyboard */,
+				E412ADAE1C07F773004CC10B /* Info.plist */,
+				E412AD9D1C07F773004CC10B /* Supporting Files */,
+			);
+			path = M80ImageMerger;
+			sourceTree = "<group>";
+		};
+		E412AD9D1C07F773004CC10B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E412AD9E1C07F773004CC10B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E412ADB41C07FB7B004CC10B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E412ADB71C07FBD6004CC10B /* UI */,
+				E412ADB51C07FB7B004CC10B /* Algorithm */,
+				E412ADB61C07FB7B004CC10B /* Util */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E412ADB51C07FB7B004CC10B /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				E412ADBE1C08015D004CC10B /* M80ImageFingerprint.h */,
+				E412ADBF1C08015D004CC10B /* M80ImageFingerprint.m */,
+				E412ADC01C08015D004CC10B /* M80ImageGenerator.h */,
+				E412ADC11C08015D004CC10B /* M80ImageGenerator.m */,
+				E412ADC21C08015D004CC10B /* M80ImageMergeInfo.h */,
+				E412ADC31C08015D004CC10B /* M80ImageMergeInfo.mm */,
+				E412ADC91C082883004CC10B /* M80ImageMergeInfoGenerator.h */,
+				E412ADCA1C082883004CC10B /* M80ImageMergeInfoGenerator.mm */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		E412ADB61C07FB7B004CC10B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E412ADBB1C080144004CC10B /* UIImage+M80.h */,
+				E412ADBC1C080144004CC10B /* UIImage+M80.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		E412ADB71C07FBD6004CC10B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E412ADB81C07FC13004CC10B /* M80ImageViewController.h */,
+				E412ADB91C07FC13004CC10B /* M80ImageViewController.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E412AD991C07F773004CC10B /* M80ImageMerger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E412ADB11C07F773004CC10B /* Build configuration list for PBXNativeTarget "M80ImageMerger" */;
+			buildPhases = (
+				865FC94AAEA3BBB61FBE7FF5 /* Check Pods Manifest.lock */,
+				E412AD961C07F773004CC10B /* Sources */,
+				E412AD971C07F773004CC10B /* Frameworks */,
+				E412AD981C07F773004CC10B /* Resources */,
+				5549ED6735200305243A298B /* Embed Pods Frameworks */,
+				BB765B68D62612ED52B38661 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = M80ImageMerger;
+			productName = M80ImageMerger;
+			productReference = E412AD9A1C07F773004CC10B /* M80ImageMerger.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E412AD921C07F773004CC10B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = M80;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = M80;
+				TargetAttributes = {
+					E412AD991C07F773004CC10B = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = L5CU59RTNH;
+					};
+				};
+			};
+			buildConfigurationList = E412AD951C07F773004CC10B /* Build configuration list for PBXProject "M80ImageMerger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E412AD911C07F773004CC10B;
+			productRefGroup = E412AD9B1C07F773004CC10B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E412AD991C07F773004CC10B /* M80ImageMerger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E412AD981C07F773004CC10B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E412ADAD1C07F773004CC10B /* LaunchScreen.storyboard in Resources */,
+				E412ADAA1C07F773004CC10B /* Assets.xcassets in Resources */,
+				E412ADA81C07F773004CC10B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5549ED6735200305243A298B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		865FC94AAEA3BBB61FBE7FF5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BB765B68D62612ED52B38661 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E412AD961C07F773004CC10B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E412ADC61C08015D004CC10B /* M80ImageMergeInfo.mm in Sources */,
+				E412ADC51C08015D004CC10B /* M80ImageGenerator.m in Sources */,
+				E412ADC41C08015D004CC10B /* M80ImageFingerprint.m in Sources */,
+				E412ADA51C07F773004CC10B /* ViewController.m in Sources */,
+				E412ADA21C07F773004CC10B /* AppDelegate.m in Sources */,
+				E412ADBA1C07FC13004CC10B /* M80ImageViewController.m in Sources */,
+				E412ADCB1C082883004CC10B /* M80ImageMergeInfoGenerator.mm in Sources */,
+				E412AD9F1C07F773004CC10B /* main.m in Sources */,
+				E412ADBD1C080144004CC10B /* UIImage+M80.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E412ADA61C07F773004CC10B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E412ADA71C07F773004CC10B /* Base */,
+				E4150BB21C0851F000EFB4F5 /* zh-Hans */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E412ADAB1C07F773004CC10B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E412ADAC1C07F773004CC10B /* Base */,
+				E4150BB31C0851F000EFB4F5 /* zh-Hans */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E412ADAF1C07F773004CC10B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E412ADB01C07F773004CC10B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E412ADB21C07F773004CC10B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80613CF678067F0480DF43AA /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = M80ImageMerger/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.xiangwangfeng.com.M80ImageMerger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		E412ADB31C07F773004CC10B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13EBA72F901AC27C7AC914BB /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = M80ImageMerger/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.xiangwangfeng.com.M80ImageMerger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E412AD951C07F773004CC10B /* Build configuration list for PBXProject "M80ImageMerger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E412ADAF1C07F773004CC10B /* Debug */,
+				E412ADB01C07F773004CC10B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E412ADB11C07F773004CC10B /* Build configuration list for PBXNativeTarget "M80ImageMerger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E412ADB21C07F773004CC10B /* Debug */,
+				E412ADB31C07F773004CC10B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E412AD921C07F773004CC10B /* Project object */;
+}
