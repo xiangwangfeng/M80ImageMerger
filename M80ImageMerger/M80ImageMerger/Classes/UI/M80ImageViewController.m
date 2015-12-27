@@ -63,10 +63,9 @@
 {
     [super viewWillLayoutSubviews];
 
-    [_imageView setFrame:CGRectMake(0, 0, _contentSize.width,_contentSize.height)];
     CGFloat x = (self.view.bounds.size.width - _contentSize.width ) / 2;
-    CGRect frame = CGRectMake(x, 0, _contentSize.width,self.view.bounds.size.height);
-    [_scrollView setFrame:frame];
+    CGRect frame = CGRectMake(x, 0, _contentSize.width,_contentSize.height);
+    [_imageView setFrame:frame];
 }
 
 
