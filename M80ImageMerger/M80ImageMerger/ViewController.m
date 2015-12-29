@@ -57,22 +57,12 @@
                                    if ([self validAssets:assets])
                                    {
                                        [SVProgressHUD show];
-                                       M80ImageGenerator *generator = [[M80ImageGenerator alloc] init];
-                                       PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
-                                       options.synchronous = YES;
-               
                                        dispatch_async(_queue, ^{
-                                           for (PHAsset *asset in assets)
-                                           {
-                                               [[PHImageManager defaultManager] requestImageDataForAsset:asset
-                                                                                                 options:options
-                                                                                           resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-                                                                                               UIImage *image = [[UIImage alloc] initWithData:imageData];
-                                                                                               [generator feedImage:image];
-                                                                                           }];
-                                           }
+                                           
+                                           M80ImageGenerator *generator = [self imageGeneratorBy:assets];
                                            
                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                               
                                                [SVProgressHUD dismiss];
                                                [self showResult:generator];
                                            });
@@ -90,6 +80,26 @@
 {
     [picker dismissViewControllerAnimated:YES
                                completion:nil];
+}
+
+
+#pragma mark - misc
+- (M80ImageGenerator *)imageGeneratorBy:(NSArray *)assets
+{
+    M80ImageGenerator *generator = [[M80ImageGenerator alloc] init];
+    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+    options.synchronous = YES;
+    
+    for (PHAsset *asset in assets)
+    {
+        [[PHImageManager defaultManager] requestImageDataForAsset:asset
+                                                          options:options
+                                                    resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+                                                        UIImage *image = [[UIImage alloc] initWithData:imageData];
+                                                        [generator feedImage:image];
+                                                    }];
+    }
+    return generator;
 }
 
 - (BOOL)validAssets:(NSArray *)assets

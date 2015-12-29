@@ -92,8 +92,8 @@
 
 - (BOOL)validInfo:(M80ImageMergeInfo *)info
 {
-    CGFloat ignoreOffset = 84; //忽略navbar
-    CGFloat thresholdPercentage = 0.2;
+    CGFloat ignoreOffset = 64 * 2; // 忽略navbar
+    CGFloat thresholdPercentage = 0.1;
     CGFloat threshold = MIN(info.firstImage.size.height, info.secondImage.size.height) * thresholdPercentage;
     NSInteger firstOffset = info.firstImage.size.height - info.firstOffset;
     NSInteger length = info.length;
