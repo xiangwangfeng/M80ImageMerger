@@ -19,6 +19,7 @@
 {
     dispatch_queue_t    _queue;
 }
+@property (weak, nonatomic) IBOutlet UIButton *okButton;
 @end
 
 @implementation ViewController
@@ -26,6 +27,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _queue = dispatch_queue_create("com.xiangwangfeng.image.queue", 0);
+    
+    _okButton.layer.cornerRadius = 5.0;
+    _okButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    _okButton.layer.borderWidth = 1;
+    _okButton.layer.masksToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {

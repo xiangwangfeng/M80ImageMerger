@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,12 +19,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="截屏拼接" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULV-xC-0Ab">
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="先用 iPhone 从上到下连续截屏，截屏之间重叠约1/5，然后到这里拼接" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4o-bH-xAc">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AI5-Yx-Bgh">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="4jc-rv-up0"/>
-                                    <constraint firstAttribute="height" constant="30" id="KsE-Pd-MPX"/>
+                                    <constraint firstAttribute="width" constant="200" id="4jc-rv-up0"/>
+                                    <constraint firstAttribute="height" constant="50" id="KsE-Pd-MPX"/>
                                 </constraints>
-                                <state key="normal" title="开始拼接"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="开始拼接">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onMergeBegin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zJy-t8-VRB"/>
                                 </connections>
@@ -31,14 +45,29 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ULV-xC-0Ab" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="6Uo-GQ-kyq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z4o-bH-xAc" secondAttribute="trailing" constant="30" id="6iZ-lA-Die"/>
                             <constraint firstItem="AI5-Yx-Bgh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Vt-tC-Vev"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AI5-Yx-Bgh" secondAttribute="bottom" constant="28" id="Du4-Ft-FLL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AI5-Yx-Bgh" secondAttribute="bottom" constant="100" id="Du4-Ft-FLL"/>
+                            <constraint firstItem="Z4o-bH-xAc" firstAttribute="top" secondItem="ULV-xC-0Ab" secondAttribute="bottom" constant="20" id="EWz-dH-9Sa"/>
+                            <constraint firstAttribute="trailing" secondItem="ULV-xC-0Ab" secondAttribute="trailing" id="Y26-PA-sB1"/>
+                            <constraint firstItem="ULV-xC-0Ab" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bTd-7g-BW8"/>
+                            <constraint firstItem="ULV-xC-0Ab" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="53" id="tYx-Kf-26L"/>
+                            <constraint firstItem="Z4o-bH-xAc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="zXg-jC-00f"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="tYx-Kf-26L"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="okButton" destination="AI5-Yx-Bgh" id="VfK-3e-DBd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="378.39999999999998" y="309.89505247376314"/>
+            <point key="canvasLocation" x="271.19999999999999" y="-16.641679160419791"/>
         </scene>
     </scenes>
 </document>
