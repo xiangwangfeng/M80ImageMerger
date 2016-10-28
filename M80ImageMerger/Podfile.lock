@@ -1,8 +1,8 @@
 PODS:
-  - CTAssetsPickerController (3.2.1):
+  - CTAssetsPickerController (3.3.1):
     - PureLayout (~> 3.0.0)
-  - PureLayout (3.0.1)
-  - SVProgressHUD (1.1.3)
+  - PureLayout (3.0.2)
+  - SVProgressHUD (2.0.3)
   - Toast (3.0)
 
 DEPENDENCIES:
@@ -11,9 +11,9 @@ DEPENDENCIES:
   - Toast
 
 SPEC CHECKSUMS:
-  CTAssetsPickerController: 629e3c452efe92627b6386f572fc4e2f31533880
-  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  CTAssetsPickerController: b1d1d50ab87cf6b8b13531de5f4530482e7e53ed
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
 
 COCOAPODS: 0.39.0

@@ -40,7 +40,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## SVProgressHUD
 
-Copyright (c) 2011-2014 Sam Vermette
+Copyright (c) 2011-2016 Sam Vermette, Tobias Tiemerding and contributors.
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
@@ -66,6 +66,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 A different license may apply to other resources included in this package, 
 including Freepik Icons. Please consult their 
 respective headers for the terms of their individual licenses.
+
 
 ## Toast
 

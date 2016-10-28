@@ -92,12 +92,6 @@
     [self selectDefaultAssetCollection];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self resetTitle];
-}
-
 - (void)dealloc
 {
     [self unregisterChangeObserver];
@@ -492,6 +486,7 @@
     PHAssetCollection *collection = self.assetCollections[indexPath.row];
     
     CTAssetsGridViewController *vc = [CTAssetsGridViewController new];
+    vc.title = self.picker.selectedAssetsString ? : collection.localizedTitle;
     vc.assetCollection = collection;
     vc.delegate = self;
     
@@ -510,13 +505,14 @@
     if (self.defaultAssetCollection && !self.didShowDefaultAssetCollection)
     {
         CTAssetsGridViewController *vc = [CTAssetsGridViewController new];
+        vc.title = self.picker.selectedAssetsString ? : self.defaultAssetCollection.localizedTitle;
         vc.assetCollection = self.defaultAssetCollection;
         vc.delegate = self;
         
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
         nav.delegate = (id<UINavigationControllerDelegate>)self.picker;
         
-        [self.picker setShouldCollapseDetailViewController:NO];        
+        [self.picker setShouldCollapseDetailViewController:(self.picker.modalPresentationStyle == UIModalPresentationFormSheet)];
         [self.splitViewController showDetailViewController:nav sender:nil];
 
         NSIndexPath *indexPath = [self indexPathForAssetCollection:self.defaultAssetCollection];

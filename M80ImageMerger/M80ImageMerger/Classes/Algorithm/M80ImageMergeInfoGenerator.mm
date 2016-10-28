@@ -36,63 +36,60 @@
     
     M80ImageFingerprint *firstFingerprint = [M80ImageFingerprint fingerprint:firstImage];
     M80ImageFingerprint *secondFingerprint= [M80ImageFingerprint fingerprint:secondImage];
+    
     NSArray *firstLines = [firstFingerprint lines];
     NSArray *secondLines= [secondFingerprint lines];
     
+    NSInteger firstLinesCount = (NSInteger)[firstLines count];
+    NSInteger secondLinesCount = (NSInteger)[secondLines count];
     
-    
-    int **matrix = new int*[[firstLines count]];
-    for (int i = 0; i < [firstLines count]; i++) {
+    int **matrix = new int*[2];
+    for (int i = 0; i < 2; i++) {
         matrix[i] = new int[[secondLines count]];
     }
     
-    
-    
-    long long firstValueInSecondLines = [[secondLines firstObject] longLongValue];
-    for (NSInteger i = 0; i < [firstLines count]; i++)
+    for (NSInteger j = 0; j < secondLinesCount; j++)
     {
-        long long value = [[firstLines objectAtIndex:i] longLongValue];
-        matrix[i][0] = value == firstValueInSecondLines;
-    }
-    long long firstValueInFirstLines = [[firstLines firstObject] longLongValue];
-    for (NSInteger  i = 0; i < [secondLines count]; i++)
-    {
-        long long value = [[secondLines objectAtIndex:i] longLongValue];
-        matrix[0][i] = value == firstValueInFirstLines;
+        matrix[0][j] = firstLines[0] == secondLines[j] ? 1 : 0;
     }
     
     NSInteger length = 0,x = 0,y = 0;
-    for (NSInteger i = 1 ; i < [firstLines count]; i ++)
+    
+    for (NSInteger i = 1 ; i < firstLinesCount; i ++)
     {
-        for (NSInteger  j = 1; j < [secondLines count]; j++)
+        for (NSInteger  j = 0; j < secondLinesCount; j++)
         {
-            if ([[firstLines objectAtIndex:i] longLongValue] == [[secondLines objectAtIndex:j] longLongValue])
+            if ([firstLines[i] longLongValue] == [secondLines[j] longLongValue])
             {
-                int value = matrix[i-1][j-1]+ 1;
-                matrix[i][j] = value;
+                int value = 0;
+                if (j != 0)
+                {
+                    value = matrix[(i + 1) % 2][j-1] + 1;
+                }
+                matrix[i % 2][j] = value;
+                
                 if (value > length)
                 {
                     length = value;
                     x = i;
                     y = j;
                 }
-                
             }
             else
             {
-                matrix[i][j]= 0;
+                matrix[i % 2][j] = 0;
             }
         }
     }
     
-    for (int i = 0; i < [firstLines count]; ++i)
+    for (int i = 0; i < 2; i++)
         delete [] matrix[i];
     delete [] matrix;
     
     info.length = length;
     info.firstOffset = firstImage.size.height - (x - length + 1);
     info.secondOffset= secondImage.size.height - (y - length + 1);
-
+    
     return info;
 }
 @end
