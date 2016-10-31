@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97E721EEC221B0FAB2CF17D4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D11ADF47204015D8D008F3D /* libPods.a */; };
+		6D592EFA47D2987BC413A9AC /* libPods-M80ImageMerger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E3D775952E0285E8C6EFEB /* libPods-M80ImageMerger.a */; };
 		E412AD9F1C07F773004CC10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E412AD9E1C07F773004CC10B /* main.m */; };
 		E412ADA21C07F773004CC10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADA11C07F773004CC10B /* AppDelegate.m */; };
 		E412ADA51C07F773004CC10B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADA41C07F773004CC10B /* ViewController.m */; };
@@ -24,9 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13EBA72F901AC27C7AC914BB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		4D11ADF47204015D8D008F3D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		80613CF678067F0480DF43AA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		414EF75E954CCD25DEDAA5B5 /* Pods-M80ImageMerger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M80ImageMerger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-M80ImageMerger/Pods-M80ImageMerger.debug.xcconfig"; sourceTree = "<group>"; };
+		B0D108C5A7CA2D9971D7C086 /* Pods-M80ImageMerger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M80ImageMerger.release.xcconfig"; path = "Pods/Target Support Files/Pods-M80ImageMerger/Pods-M80ImageMerger.release.xcconfig"; sourceTree = "<group>"; };
+		D3E3D775952E0285E8C6EFEB /* libPods-M80ImageMerger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-M80ImageMerger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E412AD9A1C07F773004CC10B /* M80ImageMerger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M80ImageMerger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E412AD9E1C07F773004CC10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E412ADA01C07F773004CC10B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E412ADC81C080346004CC10B /* libz.tbd in Frameworks */,
-				97E721EEC221B0FAB2CF17D4 /* libPods.a in Frameworks */,
+				6D592EFA47D2987BC413A9AC /* libPods-M80ImageMerger.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,18 +71,9 @@
 			isa = PBXGroup;
 			children = (
 				E412ADC71C080346004CC10B /* libz.tbd */,
-				4D11ADF47204015D8D008F3D /* libPods.a */,
+				D3E3D775952E0285E8C6EFEB /* libPods-M80ImageMerger.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		78865F6C4C7B6417DA31655E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				80613CF678067F0480DF43AA /* Pods.debug.xcconfig */,
-				13EBA72F901AC27C7AC914BB /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		E412AD911C07F773004CC10B = {
@@ -90,8 +81,8 @@
 			children = (
 				E412AD9C1C07F773004CC10B /* M80ImageMerger */,
 				E412AD9B1C07F773004CC10B /* Products */,
-				78865F6C4C7B6417DA31655E /* Pods */,
 				42925B1628401C5D35BEBCC2 /* Frameworks */,
+				F99E391C4AE4E7DDCEFE38AC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +162,15 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		F99E391C4AE4E7DDCEFE38AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				414EF75E954CCD25DEDAA5B5 /* Pods-M80ImageMerger.debug.xcconfig */,
+				B0D108C5A7CA2D9971D7C086 /* Pods-M80ImageMerger.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,12 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E412ADB11C07F773004CC10B /* Build configuration list for PBXNativeTarget "M80ImageMerger" */;
 			buildPhases = (
-				865FC94AAEA3BBB61FBE7FF5 /* Check Pods Manifest.lock */,
+				C927D584E1C93896DE7EA91F /* [CP] Check Pods Manifest.lock */,
 				E412AD961C07F773004CC10B /* Sources */,
 				E412AD971C07F773004CC10B /* Frameworks */,
 				E412AD981C07F773004CC10B /* Resources */,
-				5549ED6735200305243A298B /* Embed Pods Frameworks */,
-				BB765B68D62612ED52B38661 /* Copy Pods Resources */,
+				C873E98114D55C5DA95247CC /* [CP] Embed Pods Frameworks */,
+				74FDD75D3835FAF36C267850 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,7 +206,7 @@
 				TargetAttributes = {
 					E412AD991C07F773004CC10B = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = MWYKGVPTJP;
+						DevelopmentTeam = L5CU59RTNH;
 					};
 				};
 			};
@@ -242,49 +242,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5549ED6735200305243A298B /* Embed Pods Frameworks */ = {
+		74FDD75D3835FAF36C267850 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-M80ImageMerger/Pods-M80ImageMerger-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		865FC94AAEA3BBB61FBE7FF5 /* Check Pods Manifest.lock */ = {
+		C873E98114D55C5DA95247CC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-M80ImageMerger/Pods-M80ImageMerger-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BB765B68D62612ED52B38661 /* Copy Pods Resources */ = {
+		C927D584E1C93896DE7EA91F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -418,15 +418,16 @@
 		};
 		E412ADB21C07F773004CC10B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80613CF678067F0480DF43AA /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 414EF75E954CCD25DEDAA5B5 /* Pods-M80ImageMerger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MWYKGVPTJP;
+				DEVELOPMENT_TEAM = L5CU59RTNH;
 				INFOPLIST_FILE = M80ImageMerger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = www.xiangwangfeng.com.M80ImageMerger;
+				OTHER_CODE_SIGN_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "www.xiangwangfeng.com.-centaur";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -434,15 +435,16 @@
 		};
 		E412ADB31C07F773004CC10B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13EBA72F901AC27C7AC914BB /* Pods.release.xcconfig */;
+			baseConfigurationReference = B0D108C5A7CA2D9971D7C086 /* Pods-M80ImageMerger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MWYKGVPTJP;
+				DEVELOPMENT_TEAM = L5CU59RTNH;
 				INFOPLIST_FILE = M80ImageMerger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = www.xiangwangfeng.com.M80ImageMerger;
+				OTHER_CODE_SIGN_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "www.xiangwangfeng.com.-centaur";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
