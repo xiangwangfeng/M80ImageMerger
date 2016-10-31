@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CTAssetSelectionLabel.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [UINavigationBar appearance].tintColor = [UIColor darkGrayColor];
+    [CTAssetSelectionLabel appearance].cornerRadius = 12.5;
     
     return YES;
 }

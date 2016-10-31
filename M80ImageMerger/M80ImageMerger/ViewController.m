@@ -45,6 +45,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (status == PHAuthorizationStatusAuthorized) {
                 CTAssetsPickerController *picker = [[CTAssetsPickerController alloc] init];
+                picker.showsSelectionIndex = YES;
                 picker.delegate = self;
                 
                 [self presentViewController:picker
