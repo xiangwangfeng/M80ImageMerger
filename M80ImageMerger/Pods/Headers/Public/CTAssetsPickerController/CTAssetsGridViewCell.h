@@ -1,1 +1,0 @@
-../../../CTAssetsPickerController/CTAssetsPickerController/CTAssetsGridViewCell.h

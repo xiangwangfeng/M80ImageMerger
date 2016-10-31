@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <CTAssetsPickerController/CTAssetsPickerController.h>
+#import "CTAssetsPickerController.h"
 #import "M80ImageGenerator.h"
 #import "SVProgressHUD.h"
 #import "M80ImageViewController.h"
@@ -50,6 +50,9 @@
                 [self presentViewController:picker
                                    animated:YES
                                  completion:nil];
+            }
+            else {
+                [self.view makeToast:@"请开启相册权限"];
             }
         });
     }];
