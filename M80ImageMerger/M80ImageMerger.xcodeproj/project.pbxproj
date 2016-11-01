@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D592EFA47D2987BC413A9AC /* libPods-M80ImageMerger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E3D775952E0285E8C6EFEB /* libPods-M80ImageMerger.a */; };
+		E40F20101DC87D770063F4DC /* M80ImageMergeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E40F200F1DC87D770063F4DC /* M80ImageMergeInfo.m */; };
 		E412AD9F1C07F773004CC10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E412AD9E1C07F773004CC10B /* main.m */; };
 		E412ADA21C07F773004CC10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADA11C07F773004CC10B /* AppDelegate.m */; };
 		E412ADA51C07F773004CC10B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADA41C07F773004CC10B /* ViewController.m */; };
@@ -18,9 +19,7 @@
 		E412ADBD1C080144004CC10B /* UIImage+M80.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADBC1C080144004CC10B /* UIImage+M80.m */; };
 		E412ADC41C08015D004CC10B /* M80ImageFingerprint.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADBF1C08015D004CC10B /* M80ImageFingerprint.m */; };
 		E412ADC51C08015D004CC10B /* M80ImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADC11C08015D004CC10B /* M80ImageGenerator.m */; };
-		E412ADC61C08015D004CC10B /* M80ImageMergeInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = E412ADC31C08015D004CC10B /* M80ImageMergeInfo.mm */; };
 		E412ADC81C080346004CC10B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E412ADC71C080346004CC10B /* libz.tbd */; };
-		E412ADCB1C082883004CC10B /* M80ImageMergeInfoGenerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = E412ADCA1C082883004CC10B /* M80ImageMergeInfoGenerator.mm */; };
 		E4D9C3CA1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C36F1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m */; };
 		E4D9C3CB1DC7239F004E7452 /* NSDateFormatter+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3711DC7239F004E7452 /* NSDateFormatter+CTAssetsPickerController.m */; };
 		E4D9C3CC1DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3731DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m */; };
@@ -60,6 +59,7 @@
 		414EF75E954CCD25DEDAA5B5 /* Pods-M80ImageMerger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M80ImageMerger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-M80ImageMerger/Pods-M80ImageMerger.debug.xcconfig"; sourceTree = "<group>"; };
 		B0D108C5A7CA2D9971D7C086 /* Pods-M80ImageMerger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M80ImageMerger.release.xcconfig"; path = "Pods/Target Support Files/Pods-M80ImageMerger/Pods-M80ImageMerger.release.xcconfig"; sourceTree = "<group>"; };
 		D3E3D775952E0285E8C6EFEB /* libPods-M80ImageMerger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-M80ImageMerger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40F200F1DC87D770063F4DC /* M80ImageMergeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80ImageMergeInfo.m; sourceTree = "<group>"; };
 		E412AD9A1C07F773004CC10B /* M80ImageMerger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M80ImageMerger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E412AD9E1C07F773004CC10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E412ADA01C07F773004CC10B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,10 +79,7 @@
 		E412ADC01C08015D004CC10B /* M80ImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageGenerator.h; sourceTree = "<group>"; };
 		E412ADC11C08015D004CC10B /* M80ImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80ImageGenerator.m; sourceTree = "<group>"; };
 		E412ADC21C08015D004CC10B /* M80ImageMergeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageMergeInfo.h; sourceTree = "<group>"; };
-		E412ADC31C08015D004CC10B /* M80ImageMergeInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = M80ImageMergeInfo.mm; sourceTree = "<group>"; };
 		E412ADC71C080346004CC10B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		E412ADC91C082883004CC10B /* M80ImageMergeInfoGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageMergeInfoGenerator.h; sourceTree = "<group>"; };
-		E412ADCA1C082883004CC10B /* M80ImageMergeInfoGenerator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = M80ImageMergeInfoGenerator.mm; sourceTree = "<group>"; };
 		E4150BB21C0851F000EFB4F5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		E4150BB31C0851F000EFB4F5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		E4D9C36C1DC7239F004E7452 /* CTAssetsPageViewController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPageViewController+Internal.h"; sourceTree = "<group>"; };
@@ -239,9 +236,7 @@
 				E412ADC01C08015D004CC10B /* M80ImageGenerator.h */,
 				E412ADC11C08015D004CC10B /* M80ImageGenerator.m */,
 				E412ADC21C08015D004CC10B /* M80ImageMergeInfo.h */,
-				E412ADC31C08015D004CC10B /* M80ImageMergeInfo.mm */,
-				E412ADC91C082883004CC10B /* M80ImageMergeInfoGenerator.h */,
-				E412ADCA1C082883004CC10B /* M80ImageMergeInfoGenerator.mm */,
+				E40F200F1DC87D770063F4DC /* M80ImageMergeInfo.m */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -523,7 +518,6 @@
 				E4D9C3DE1DC7239F004E7452 /* CTAssetsGridViewFooter.m in Sources */,
 				E4D9C3D01DC7239F004E7452 /* UICollectionView+CTAssetsPickerController.m in Sources */,
 				E4D9C3D31DC7239F004E7452 /* CTAssetCollectionViewCell.m in Sources */,
-				E412ADC61C08015D004CC10B /* M80ImageMergeInfo.mm in Sources */,
 				E412ADC51C08015D004CC10B /* M80ImageGenerator.m in Sources */,
 				E4D9C3EA1DC7239F004E7452 /* CTAssetThumbnailView.m in Sources */,
 				E4D9C3CA1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m in Sources */,
@@ -533,6 +527,7 @@
 				E4D9C3DD1DC7239F004E7452 /* CTAssetsGridViewController.m in Sources */,
 				E4D9C3CD1DC7239F004E7452 /* NSNumberFormatter+CTAssetsPickerController.m in Sources */,
 				E4D9C3D21DC7239F004E7452 /* CTAssetCheckmark.m in Sources */,
+				E40F20101DC87D770063F4DC /* M80ImageMergeInfo.m in Sources */,
 				E4D9C3E51DC7239F004E7452 /* CTAssetsPickerController.m in Sources */,
 				E412ADC41C08015D004CC10B /* M80ImageFingerprint.m in Sources */,
 				E4D9C3D11DC7239F004E7452 /* UIImage+CTAssetsPickerController.m in Sources */,
@@ -545,7 +540,6 @@
 				E4D9C3E91DC7239F004E7452 /* CTAssetThumbnailStacks.m in Sources */,
 				E4D9C3D61DC7239F004E7452 /* CTAssetPlayButton.m in Sources */,
 				E4D9C3E61DC7239F004E7452 /* CTAssetsPickerNoAssetsView.m in Sources */,
-				E412ADCB1C082883004CC10B /* M80ImageMergeInfoGenerator.mm in Sources */,
 				E4D9C3D81DC7239F004E7452 /* CTAssetSelectionButton.m in Sources */,
 				E4D9C3DC1DC7239F004E7452 /* CTAssetsGridViewCell.m in Sources */,
 				E412AD9F1C07F773004CC10B /* main.m in Sources */,

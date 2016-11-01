@@ -7,7 +7,7 @@
 //
 
 #import "M80ImageGenerator.h"
-#import "M80ImageMergeInfoGenerator.h"
+#import "M80ImageMergeInfo.h"
 #import "UIImage+M80.h"
 
 @interface M80ImageGenerator ()
@@ -71,9 +71,8 @@
                   image.scale == baseImage.scale;
     if (doFeed)
     {
-        M80ImageMergeInfoGenerator *generator =  [[M80ImageMergeInfoGenerator alloc] init];
-        M80ImageMergeInfo *info = [generator infoByImage:baseImage
-                                              secondImage:image];
+        M80ImageMergeInfo *info = [M80ImageMergeInfo infoBy:baseImage
+                                                secondImage:image];
         
         if (![self validInfo:info])
         {

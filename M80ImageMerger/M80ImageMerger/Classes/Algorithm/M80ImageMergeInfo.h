@@ -12,9 +12,12 @@
 @interface M80ImageMergeInfo : NSObject
 @property (nonatomic,strong)    UIImage     *firstImage;
 @property (nonatomic,strong)    UIImage     *secondImage;
-@property (nonatomic,assign)    NSInteger   firstOffset;    //为计算方便,此处为从bottom计算的offset
-@property (nonatomic,assign)    NSInteger   secondOffset;   //为计算方便,此处为从bottom计算的offset
-@property (nonatomic,assign)    NSInteger   length;
+@property (nonatomic,assign)    NSInteger   firstOffset;    //为计算方便,此处为从 bottom 计算的 offset
+@property (nonatomic,assign)    NSInteger   secondOffset;   //为计算方便,此处为从 bottom 计算的 offset
+@property (nonatomic,assign)    NSInteger   length;         //重合部分长度
+
++ (instancetype)infoBy:(UIImage *)firstImage
+           secondImage:(UIImage *)secondImage;
 @end
 
 

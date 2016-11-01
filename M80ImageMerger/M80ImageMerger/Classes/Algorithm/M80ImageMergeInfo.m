@@ -1,33 +1,18 @@
 //
-//  M80ImageMergeInfoGenerator.m
-//  M80ImageMerger
+//  M80ImageMergeInfo.m
+//  M80Image
 //
-//  Created by amao on 11/27/15.
-//  Copyright © 2015 M80. All rights reserved.
+//  Created by amao on 11/18/15.
+//  Copyright © 2015 Netease. All rights reserved.
 //
 
-#import "M80ImageMergeInfoGenerator.h"
+#import "M80ImageMergeInfo.h"
 #import "M80ImageFingerprint.h"
 
-@interface M80ImageMergeInfoGenerator ()
+@implementation M80ImageMergeInfo
 
-@end
-
-
-@implementation M80ImageMergeInfoGenerator
-- (instancetype)init
-{
-    if (self = [super init])
-    {
-    }
-    return self;
-}
-
-
-
-
-- (M80ImageMergeInfo *)infoByImage:(UIImage *)firstImage
-                       secondImage:(UIImage *)secondImage
++ (instancetype)infoBy:(UIImage *)firstImage
+           secondImage:(UIImage *)secondImage
 {
     M80ImageMergeInfo *info = [[M80ImageMergeInfo alloc] init];
     info.firstImage = firstImage;
@@ -43,18 +28,20 @@
     NSInteger firstLinesCount = (NSInteger)[firstLines count];
     NSInteger secondLinesCount = (NSInteger)[secondLines count];
     
-    int **matrix = new int*[2];
-    for (int i = 0; i < 2; i++) {
-        matrix[i] = new int[[secondLines count]];
+    //初始化动态规划所需要的数组
+    int **matrix = (int **)malloc(sizeof(int *) * 2);
+    for (int i = 0; i < 2; i++)
+    {
+        matrix[i] = (int *)malloc(sizeof(int) * (size_t)secondLinesCount);
     }
-    
     for (NSInteger j = 0; j < secondLinesCount; j++)
     {
         matrix[0][j] = firstLines[0] == secondLines[j] ? 1 : 0;
     }
     
-    NSInteger length = 0,x = 0,y = 0;
     
+    //遍历并合并
+    NSInteger length = 0,x = 0,y = 0;
     for (NSInteger i = 1 ; i < firstLinesCount; i ++)
     {
         for (NSInteger  j = 0; j < secondLinesCount; j++)
@@ -82,14 +69,20 @@
         }
     }
     
+    //清理
     for (int i = 0; i < 2; i++)
-        delete [] matrix[i];
-    delete [] matrix;
+        free(matrix[i]);
+    free(matrix);
     
+    
+    //更新数据
     info.length = length;
     info.firstOffset = firstImage.size.height - (x - length + 1);
     info.secondOffset= secondImage.size.height - (y - length + 1);
     
     return info;
 }
+
 @end
+
+
