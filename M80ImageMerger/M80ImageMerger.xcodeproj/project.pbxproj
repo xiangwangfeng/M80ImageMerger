@@ -20,6 +20,7 @@
 		E412ADC41C08015D004CC10B /* M80ImageFingerprint.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADBF1C08015D004CC10B /* M80ImageFingerprint.m */; };
 		E412ADC51C08015D004CC10B /* M80ImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADC11C08015D004CC10B /* M80ImageGenerator.m */; };
 		E412ADC81C080346004CC10B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E412ADC71C080346004CC10B /* libz.tbd */; };
+		E4176A2D1DCC5A61009E1781 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4176A2F1DCC5A61009E1781 /* Localizable.strings */; };
 		E4D9C3CA1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C36F1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m */; };
 		E4D9C3CB1DC7239F004E7452 /* NSDateFormatter+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3711DC7239F004E7452 /* NSDateFormatter+CTAssetsPickerController.m */; };
 		E4D9C3CC1DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3731DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m */; };
@@ -81,7 +82,9 @@
 		E412ADC21C08015D004CC10B /* M80ImageMergeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageMergeInfo.h; sourceTree = "<group>"; };
 		E412ADC71C080346004CC10B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E4150BB21C0851F000EFB4F5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		E4150BB31C0851F000EFB4F5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		E4176A301DCC5A64009E1781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E4176A311DCC5A6A009E1781 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E4176A341DCC6491009E1781 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E4D9C36C1DC7239F004E7452 /* CTAssetsPageViewController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPageViewController+Internal.h"; sourceTree = "<group>"; };
 		E4D9C36D1DC7239F004E7452 /* CTAssetsPickerController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPickerController+Internal.h"; sourceTree = "<group>"; };
 		E4D9C36E1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CTAssetsPickerController.h"; sourceTree = "<group>"; };
@@ -205,6 +208,7 @@
 				E412ADA91C07F773004CC10B /* Assets.xcassets */,
 				E412ADAB1C07F773004CC10B /* LaunchScreen.storyboard */,
 				E412ADAE1C07F773004CC10B /* Info.plist */,
+				E4176A2F1DCC5A61009E1781 /* Localizable.strings */,
 				E412AD9D1C07F773004CC10B /* Supporting Files */,
 			);
 			path = M80ImageMerger;
@@ -443,6 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4176A2D1DCC5A61009E1781 /* Localizable.strings in Resources */,
 				E412ADAD1C07F773004CC10B /* LaunchScreen.storyboard in Resources */,
 				E412ADAA1C07F773004CC10B /* Assets.xcassets in Resources */,
 				E412ADA81C07F773004CC10B /* Main.storyboard in Resources */,
@@ -556,6 +561,7 @@
 			children = (
 				E412ADA71C07F773004CC10B /* Base */,
 				E4150BB21C0851F000EFB4F5 /* zh-Hans */,
+				E4176A341DCC6491009E1781 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -564,9 +570,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				E412ADAC1C07F773004CC10B /* Base */,
-				E4150BB31C0851F000EFB4F5 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E4176A2F1DCC5A61009E1781 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4176A301DCC5A64009E1781 /* Base */,
+				E4176A311DCC5A6A009E1781 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

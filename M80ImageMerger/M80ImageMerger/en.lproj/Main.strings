@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "AI5-Yx-Bgh"; */
+"AI5-Yx-Bgh.normalTitle" = "Start";
+
+/* Class = "UILabel"; text = "Automatic Screenshot Stitching"; ObjectID = "ULV-xC-0Ab"; */
+"ULV-xC-0Ab.text" = "Automatic Screenshot Stitching";
+
+/* Class = "UILabel"; text = "Automatically stitch your screenshots into one long image. Ensure they have 10% overlap content."; ObjectID = "Z4o-bH-xAc"; */
+"Z4o-bH-xAc.text" = "Automatically stitch your screenshots into one long image. Ensure they have 10% overlap content.";

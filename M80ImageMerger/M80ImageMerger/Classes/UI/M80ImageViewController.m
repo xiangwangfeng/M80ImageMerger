@@ -45,16 +45,16 @@
     _imageView.image = _image;
     
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消"
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", nil)
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(onDismiss:)];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存"
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Save", nil)
                                                                               style:UIBarButtonItemStyleDone
                                                                              target:self
                                                                              action:@selector(onSave:)];
-    self.title = @"图片预览";
+    self.title = NSLocalizedString(@"Preview", nil);
 }
 
 
@@ -84,7 +84,7 @@
 didFinishSavingWithError:(NSError *) error
   contextInfo:(void *) contextInfo
 {
-    [self.view makeToast:error ? @"保存失败" : @"保存成功"];
+    [self.view makeToast:error ? NSLocalizedString(@"Fail to save image", nil) : NSLocalizedString(@"Image saved successfully", nil)];
 }
 @end
 

@@ -53,7 +53,7 @@
                                  completion:nil];
             }
             else {
-                [self.view makeToast:@"请开启相册权限"];
+                [self.view makeToast:NSLocalizedString(@"This app does not have access to your photos", nil)];
             }
         });
     }];
@@ -80,7 +80,7 @@
                                    }
                                    else
                                    {
-                                       [self.view makeToast:@"请选择相同宽度的图片"];
+                                       [self.view makeToast:NSLocalizedString(@"You should choose photos of same width", nil)];
                                    }
                                }];
 }
@@ -156,10 +156,10 @@
     }
     else
     {
-        UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"拼接失败"
-                                                                            message:@"请选择有相同内容的图片进行拼接"
+        UIAlertController *controller = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Fail to stitch images", nil)
+                                                                            message:NSLocalizedString(@"No enough overlap contents in these images", nil)
                                                                      preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定"
+        UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil)
                                                          style:UIAlertActionStyleCancel
                                                        handler:nil];
         [controller addAction:action];

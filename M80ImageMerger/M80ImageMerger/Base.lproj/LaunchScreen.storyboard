@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,31 +22,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阿毛作品" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eB-5u-vYO">
-                                <rect key="frame" x="37.5" y="146" width="300" height="46"/>
+                                <rect key="frame" x="-62.5" y="146" width="500" height="46"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="SRn-EI-SGs"/>
+                                    <constraint firstAttribute="width" constant="500" id="SRn-EI-SGs"/>
                                     <constraint firstAttribute="height" constant="45.5" id="lni-6U-WPT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xiangwangfeng@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucH-5F-5Lp">
-                                <rect key="frame" x="37.5" y="206.5" width="300" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="TUh-lR-xR1"/>
-                                    <constraint firstAttribute="width" constant="300" id="YUl-5b-Lg3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3eB-5u-vYO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Fhn-IS-mgV"/>
-                            <constraint firstItem="ucH-5F-5Lp" firstAttribute="top" secondItem="3eB-5u-vYO" secondAttribute="bottom" constant="15" id="Jwj-3I-Qsc"/>
-                            <constraint firstItem="ucH-5F-5Lp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ZIx-Kr-p3c"/>
                             <constraint firstItem="3eB-5u-vYO" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="126" id="wMi-X2-GGb"/>
                         </constraints>
                     </view>

@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  M80ImageMerger
+
+  Created by amao on 2016/11/4.
+  Copyright © 2016年 M80. All rights reserved.
+*/
+
+"Cancel" = "Cancel";
+"Save" = "Save";
+"OK" = "OK";
+
+
+"Preview" = "Preview";
+
+
+"Image saved successfully" = "Image saved successfully";
+"Fail to save image" = "Fail to save image";
+
+"This app does not have access to your photos" = "This app does not have access to your photos";
+"You should choose photos of same width" = "You should choose photos of same width";
+"Fail to stitch images" = "Fail to stitch images";
+"No enough overlap contents in these images" = "No enough overlap contents in these images";
+
+
+
