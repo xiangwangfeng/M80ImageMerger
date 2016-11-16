@@ -35,8 +35,8 @@ typedef struct
     NSInteger firstLinesCount = (NSInteger)[firstLines count];
     NSInteger secondLinesCount = (NSInteger)[secondLines count];
     
-    //允许有大约 1% 的错误
-    NSInteger threshold = MAX((NSInteger)(0.01 * MIN(firstImage.size.height, secondImage.size.height)),5);
+    //允许有大约 0.5% 的错误
+    NSInteger threshold = MAX((NSInteger)(0.005 * MIN(firstImage.size.height, secondImage.size.height)),5);
     
     
     //初始化动态规划所需要的数组
@@ -110,8 +110,33 @@ typedef struct
     info.length = length;
     info.firstOffset = firstImage.size.height - (x - length + 1);
     info.secondOffset= secondImage.size.height - (y - length + 1);
-        
+    
+    NSLog(@"%@",info);
+    
     return info;
+}
+
+- (BOOL)isVald
+{
+    CGFloat ignoredOffset = 128;    //忽略掉头尾
+    CGFloat thresholdPercentage = 0.1;  //设置最小的匹配比例
+    CGFloat firstImageHeight = _firstImage.size.height;
+    CGFloat secondImageHeight= _secondImage.size.height;
+    
+    CGFloat threshold = MIN(firstImageHeight, secondImageHeight) * thresholdPercentage;
+    CGFloat firstTopOffset = firstImageHeight - _firstOffset;
+    CGFloat secondTopOffset= secondImageHeight - _secondOffset;
+    
+    return threshold > 0 &&
+           _length > (NSInteger)threshold &&
+           secondTopOffset >= ignoredOffset &&
+           firstTopOffset >= secondTopOffset;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"images heights(%zd,%zd) length (%zd) offsets (%zd,%zd)",
+            (NSInteger)_firstImage.size.height,(NSInteger)_secondImage.size.height,_length,_firstOffset,_secondOffset];
 }
 
 @end

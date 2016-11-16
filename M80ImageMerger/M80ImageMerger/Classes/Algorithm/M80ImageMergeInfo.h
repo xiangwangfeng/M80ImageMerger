@@ -18,6 +18,8 @@
 
 + (instancetype)infoBy:(UIImage *)firstImage
            secondImage:(UIImage *)secondImage;
+
+- (BOOL)isVald;
 @end
 
 
