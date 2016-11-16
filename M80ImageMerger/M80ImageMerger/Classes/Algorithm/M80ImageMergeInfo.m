@@ -9,6 +9,13 @@
 #import "M80ImageMergeInfo.h"
 #import "M80ImageFingerprint.h"
 
+typedef struct
+{
+    NSInteger value;
+    NSInteger threshold;
+}InterestPoint;
+
+
 @implementation M80ImageMergeInfo
 
 + (instancetype)infoBy:(UIImage *)firstImage
@@ -28,15 +35,22 @@
     NSInteger firstLinesCount = (NSInteger)[firstLines count];
     NSInteger secondLinesCount = (NSInteger)[secondLines count];
     
+    //允许有大约 1% 的错误
+    NSInteger threshold = MAX((NSInteger)(0.01 * MIN(firstImage.size.height, secondImage.size.height)),5);
+    
+    
     //初始化动态规划所需要的数组
-    int **matrix = (int **)malloc(sizeof(int *) * 2);
-    for (int i = 0; i < 2; i++)
+    InterestPoint **matrix = (InterestPoint **)malloc(sizeof(InterestPoint *) * 2);
+    for (NSInteger i = 0; i < 2; i++)
     {
-        matrix[i] = (int *)malloc(sizeof(int) * (size_t)secondLinesCount);
+        matrix[i] = (InterestPoint *)malloc(sizeof(InterestPoint) * (size_t)secondLinesCount);
     }
     for (NSInteger j = 0; j < secondLinesCount; j++)
     {
-        matrix[0][j] = firstLines[0] == secondLines[j] ? 1 : 0;
+        InterestPoint point;
+        point.value = firstLines[0] == secondLines[j] ? 1 : 0;
+        point.threshold = threshold;
+        matrix[0][j] = point;
     }
     
     
@@ -46,31 +60,48 @@
     {
         for (NSInteger  j = 0; j < secondLinesCount; j++)
         {
+            InterestPoint point;
             if ([firstLines[i] longLongValue] == [secondLines[j] longLongValue])
             {
-                int value = 0;
-                if (j != 0)
+                if (j == 0)
                 {
-                    value = matrix[(i + 1) % 2][j-1] + 1;
+                    point.value = 1;
+                    point.threshold = threshold;
+                    
                 }
-                matrix[i % 2][j] = value;
-                
-                if (value > length)
+                else
                 {
-                    length = value;
+                    InterestPoint oldPoint = matrix[(i + 1) % 2][j-1];
+                    point.value = oldPoint.value + 1;
+                    point.threshold = MAX(threshold, oldPoint.threshold + 1);
+                }
+                if (point.value > length)
+                {
+                    length = point.value;
                     x = i;
                     y = j;
                 }
             }
             else
             {
-                matrix[i % 2][j] = 0;
+                if (j == 0)
+                {
+                    point.value = 0;
+                    point.threshold = threshold;
+                }
+                else
+                {
+                    InterestPoint oldPoint = matrix[(i + 1) % 2][j-1];
+                    point.value = oldPoint.threshold > 0 ? oldPoint.value + 1 : 0;
+                    point.threshold = MAX(oldPoint.threshold - 1, 0);
+                }
             }
+            matrix[i % 2][j] = point;
         }
     }
     
     //清理
-    for (int i = 0; i < 2; i++)
+    for (NSInteger i = 0; i < 2; i++)
         free(matrix[i]);
     free(matrix);
     
@@ -79,7 +110,7 @@
     info.length = length;
     info.firstOffset = firstImage.size.height - (x - length + 1);
     info.secondOffset= secondImage.size.height - (y - length + 1);
-    
+        
     return info;
 }
 
