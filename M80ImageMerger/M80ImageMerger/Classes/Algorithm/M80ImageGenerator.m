@@ -74,7 +74,7 @@
         M80ImageMergeInfo *info = [M80ImageMergeInfo infoBy:baseImage
                                                 secondImage:image];
         
-        if (![info isVald])
+        if (![self validInfo:info])
         {
             _error = [NSError errorWithDomain:@"www.xiangwangfeng.com"
                                          code:1
@@ -87,6 +87,18 @@
         }
     }
     return doFeed;
+}
+
+- (BOOL)validInfo:(M80ImageMergeInfo *)info
+{
+    CGFloat ignoreOffset = 64 * 2; // 忽略navbar
+    CGFloat thresholdPercentage = 0.1;
+    CGFloat threshold = MIN(info.firstImage.size.height, info.secondImage.size.height) * thresholdPercentage;
+    NSInteger firstOffset = info.firstImage.size.height - info.firstOffset;
+    NSInteger length = info.length;
+    return threshold > 0 &&
+           length > (NSInteger)threshold &&
+           firstOffset >= ignoreOffset;
 }
 
 - (UIImage *)generate

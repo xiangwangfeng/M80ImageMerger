@@ -9,13 +9,6 @@
 #import "M80ImageMergeInfo.h"
 #import "M80ImageFingerprint.h"
 
-typedef struct
-{
-    NSInteger value;
-    NSInteger threshold;
-}InterestPoint;
-
-
 @implementation M80ImageMergeInfo
 
 + (instancetype)infoBy:(UIImage *)firstImage
@@ -35,22 +28,15 @@ typedef struct
     NSInteger firstLinesCount = (NSInteger)[firstLines count];
     NSInteger secondLinesCount = (NSInteger)[secondLines count];
     
-    //允许有大约 0.5% 的错误
-    NSInteger threshold = MAX((NSInteger)(0.005 * MIN(firstImage.size.height, secondImage.size.height)),5);
-    
-    
     //初始化动态规划所需要的数组
-    InterestPoint **matrix = (InterestPoint **)malloc(sizeof(InterestPoint *) * 2);
-    for (NSInteger i = 0; i < 2; i++)
+    int **matrix = (int **)malloc(sizeof(int *) * 2);
+    for (int i = 0; i < 2; i++)
     {
-        matrix[i] = (InterestPoint *)malloc(sizeof(InterestPoint) * (size_t)secondLinesCount);
+        matrix[i] = (int *)malloc(sizeof(int) * (size_t)secondLinesCount);
     }
     for (NSInteger j = 0; j < secondLinesCount; j++)
     {
-        InterestPoint point;
-        point.value = firstLines[0] == secondLines[j] ? 1 : 0;
-        point.threshold = threshold;
-        matrix[0][j] = point;
+        matrix[0][j] = firstLines[0] == secondLines[j] ? 1 : 0;
     }
     
     
@@ -60,48 +46,31 @@ typedef struct
     {
         for (NSInteger  j = 0; j < secondLinesCount; j++)
         {
-            InterestPoint point;
             if ([firstLines[i] longLongValue] == [secondLines[j] longLongValue])
             {
-                if (j == 0)
+                int value = 0;
+                if (j != 0)
                 {
-                    point.value = 1;
-                    point.threshold = threshold;
-                    
+                    value = matrix[(i + 1) % 2][j-1] + 1;
                 }
-                else
+                matrix[i % 2][j] = value;
+                
+                if (value > length)
                 {
-                    InterestPoint oldPoint = matrix[(i + 1) % 2][j-1];
-                    point.value = oldPoint.value + 1;
-                    point.threshold = MAX(threshold, oldPoint.threshold + 1);
-                }
-                if (point.value > length)
-                {
-                    length = point.value;
+                    length = value;
                     x = i;
                     y = j;
                 }
             }
             else
             {
-                if (j == 0)
-                {
-                    point.value = 0;
-                    point.threshold = threshold;
-                }
-                else
-                {
-                    InterestPoint oldPoint = matrix[(i + 1) % 2][j-1];
-                    point.value = oldPoint.threshold > 0 ? oldPoint.value + 1 : 0;
-                    point.threshold = MAX(oldPoint.threshold - 1, 0);
-                }
+                matrix[i % 2][j] = 0;
             }
-            matrix[i % 2][j] = point;
         }
     }
     
     //清理
-    for (NSInteger i = 0; i < 2; i++)
+    for (int i = 0; i < 2; i++)
         free(matrix[i]);
     free(matrix);
     
@@ -111,32 +80,7 @@ typedef struct
     info.firstOffset = firstImage.size.height - (x - length + 1);
     info.secondOffset= secondImage.size.height - (y - length + 1);
     
-    NSLog(@"%@",info);
-    
     return info;
-}
-
-- (BOOL)isVald
-{
-    CGFloat ignoredOffset = 128;    //忽略掉头尾
-    CGFloat thresholdPercentage = 0.1;  //设置最小的匹配比例
-    CGFloat firstImageHeight = _firstImage.size.height;
-    CGFloat secondImageHeight= _secondImage.size.height;
-    
-    CGFloat threshold = MIN(firstImageHeight, secondImageHeight) * thresholdPercentage;
-    CGFloat firstTopOffset = firstImageHeight - _firstOffset;
-    CGFloat secondTopOffset= secondImageHeight - _secondOffset;
-    
-    return threshold > 0 &&
-           _length > (NSInteger)threshold &&
-           secondTopOffset >= ignoredOffset &&
-           firstTopOffset >= secondTopOffset;
-}
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"images heights(%zd,%zd) length (%zd) offsets (%zd,%zd)",
-            (NSInteger)_firstImage.size.height,(NSInteger)_secondImage.size.height,_length,_firstOffset,_secondOffset];
 }
 
 @end
