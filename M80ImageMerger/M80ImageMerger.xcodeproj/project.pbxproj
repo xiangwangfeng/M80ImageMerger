@@ -22,6 +22,7 @@
 		E412ADC81C080346004CC10B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E412ADC71C080346004CC10B /* libz.tbd */; };
 		E4176A2D1DCC5A61009E1781 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4176A2F1DCC5A61009E1781 /* Localizable.strings */; };
 		E4176A3C1DCC864B009E1781 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4176A3E1DCC864B009E1781 /* InfoPlist.strings */; };
+		E48157331DF7B88A00AED64D /* M80RecentImageFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = E48157321DF7B88A00AED64D /* M80RecentImageFinder.m */; };
 		E4D9C3CA1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C36F1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m */; };
 		E4D9C3CB1DC7239F004E7452 /* NSDateFormatter+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3711DC7239F004E7452 /* NSDateFormatter+CTAssetsPickerController.m */; };
 		E4D9C3CC1DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3731DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m */; };
@@ -88,6 +89,8 @@
 		E4176A341DCC6491009E1781 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E4176A3D1DCC864B009E1781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4176A3F1DCC864E009E1781 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E48157311DF7B88A00AED64D /* M80RecentImageFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80RecentImageFinder.h; sourceTree = "<group>"; };
+		E48157321DF7B88A00AED64D /* M80RecentImageFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80RecentImageFinder.m; sourceTree = "<group>"; };
 		E4D9C36C1DC7239F004E7452 /* CTAssetsPageViewController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPageViewController+Internal.h"; sourceTree = "<group>"; };
 		E4D9C36D1DC7239F004E7452 /* CTAssetsPickerController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPickerController+Internal.h"; sourceTree = "<group>"; };
 		E4D9C36E1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CTAssetsPickerController.h"; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 			children = (
 				E412ADBB1C080144004CC10B /* UIImage+M80.h */,
 				E412ADBC1C080144004CC10B /* UIImage+M80.m */,
+				E48157311DF7B88A00AED64D /* M80RecentImageFinder.h */,
+				E48157321DF7B88A00AED64D /* M80RecentImageFinder.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -544,6 +549,7 @@
 				E412ADA51C07F773004CC10B /* ViewController.m in Sources */,
 				E412ADA21C07F773004CC10B /* AppDelegate.m in Sources */,
 				E4D9C3D71DC7239F004E7452 /* CTAssetScrollView.m in Sources */,
+				E48157331DF7B88A00AED64D /* M80RecentImageFinder.m in Sources */,
 				E4D9C3E71DC7239F004E7452 /* CTAssetsViewControllerTransition.m in Sources */,
 				E4D9C3E01DC7239F004E7452 /* CTAssetsNavigationController.m in Sources */,
 				E412ADBA1C07FC13004CC10B /* M80ImageViewController.m in Sources */,

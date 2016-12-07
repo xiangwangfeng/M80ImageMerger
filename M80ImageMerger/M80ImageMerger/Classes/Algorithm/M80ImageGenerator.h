@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+    M80MergeErrorNotSameWidth,
+    M80MergeErrorNotEnoughOverlap,
+} M80MergeError;
+
+#define M80ERRORDOMAIN @"www.xiangwangfeng.com"
+
 @interface M80ImageGenerator : NSObject
 @property (nonatomic,strong)    NSError *error;
 

@@ -12,14 +12,21 @@
 #import "SVProgressHUD.h"
 #import "M80ImageViewController.h"
 #import "UIView+Toast.h"
+#import "M80RecentImageFinder.h"
+
 
 @import Photos;
 
-@interface ViewController ()<CTAssetsPickerControllerDelegate>
+typedef void(^M80ImageMergeBlock)(UIImage *image,NSError *error);
+
+
+
+@interface ViewController ()<CTAssetsPickerControllerDelegate,M80RecentImageFinderDelegate>
 {
     dispatch_queue_t    _queue;
 }
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
+@property (strong,nonatomic) M80RecentImageFinder *finder;
 @end
 
 @implementation ViewController
@@ -32,6 +39,10 @@
     _okButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
     _okButton.layer.borderWidth = 1;
     _okButton.layer.masksToBounds = YES;
+    
+    _finder = [[M80RecentImageFinder alloc] init];
+    _finder.delegate = self;
+    [_finder run];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,24 +75,13 @@
 {
     [picker dismissViewControllerAnimated:YES
                                completion:^{
-                                   if ([self validAssets:assets])
-                                   {
-                                       [SVProgressHUD show];
-                                       dispatch_async(_queue, ^{
-                                           
-                                           M80ImageGenerator *generator = [self imageGeneratorBy:assets];
-                                           
-                                           dispatch_async(dispatch_get_main_queue(), ^{
-                                               
-                                               [SVProgressHUD dismiss];
-                                               [self showResult:generator];
-                                           });
-                                       });
-                                   }
-                                   else
-                                   {
-                                       [self.view makeToast:NSLocalizedString(@"You should choose photos of same width", nil)];
-                                   }
+                                   
+                                   [self mergeImages:assets
+                                          completion:^(UIImage *image, NSError *error) {
+                                              [self showResult:image
+                                                         error:error];
+                                          }];
+                                   
                                }];
 }
 
@@ -92,8 +92,43 @@
                                completion:nil];
 }
 
+#pragma mark - 合并图片
+- (void)mergeImages:(NSArray *)assets
+         completion:(M80ImageMergeBlock)completion
+{
+    if ([self validAssets:assets])
+    {
+        [SVProgressHUD show];
+        dispatch_async(_queue, ^{
+            
+            M80ImageGenerator *generator = [self imageGeneratorBy:assets];
+            UIImage *image = [generator generate];
+            NSError *error = [generator error];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [SVProgressHUD dismiss];
 
-#pragma mark - misc
+       
+                if (completion) {
+                    completion(image,error);
+                }
+                
+            });
+        });
+    }
+    else
+    {
+        if (completion) {
+            completion(nil,[NSError errorWithDomain:M80ERRORDOMAIN
+                                               code:M80MergeErrorNotSameWidth
+                                           userInfo:Nil]);
+        }
+    }
+    
+}
+
+
 - (M80ImageGenerator *)imageGeneratorBy:(NSArray *)assets
 {
     M80ImageGenerator *generator = [[M80ImageGenerator alloc] init];
@@ -143,29 +178,71 @@
     return valid;
 }
 
-- (void)showResult:(M80ImageGenerator *)generator
+
+#pragma mark - 结果显示
+- (void)showResult:(UIImage *)image
+             error:(NSError *)error
 {
-    UIImage *image = [generator generate];
-    if(image && ![generator error])
+    if (error)
     {
-        M80ImageViewController *vc = [[M80ImageViewController alloc] initWithImage:image];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        [self presentViewController:nav
-                           animated:YES
-                         completion:nil];
+        NSInteger code = [error code];
+        switch (code) {
+            case M80MergeErrorNotSameWidth:
+                [self showNotSameWidthTip];
+                break;
+            case M80MergeErrorNotEnoughOverlap:
+                [self showNotEnoughOverlapError];
+                break;
+            default:
+                assert(0);
+                break;
+        }
     }
     else
     {
-        UIAlertController *controller = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Fail to stitch images", nil)
-                                                                            message:NSLocalizedString(@"No enough overlap contents in these images", nil)
-                                                                     preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil)
-                                                         style:UIAlertActionStyleCancel
-                                                       handler:nil];
-        [controller addAction:action];
-        [self presentViewController:controller
-                           animated:YES
-                         completion:nil];
+        [self showImage:image];
     }
+}
+
+- (void)showNotSameWidthTip
+{
+    [self.view makeToast:NSLocalizedString(@"You should choose photos of same width", nil)];
+}
+
+- (void)showNotEnoughOverlapError
+{
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Fail to stitch images", nil)
+                                                                        message:NSLocalizedString(@"No enough overlap contents in these images", nil)
+                                                                 preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil)
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:nil];
+    [controller addAction:action];
+    [self presentViewController:controller
+                       animated:YES
+                     completion:nil];
+}
+
+- (void)showImage:(UIImage *)image
+{
+    M80ImageViewController *vc = [[M80ImageViewController alloc] initWithImage:image];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav
+                       animated:YES
+                     completion:nil];
+}
+
+
+
+#pragma mark - M80RecentImageFinderDelegate
+- (void)onFindRecentImages:(NSArray *)images
+{
+    [self mergeImages:images
+           completion:^(UIImage *image, NSError *error) {
+               if (error == nil && image)
+               {
+                   [self showImage:image];
+               }
+           }];
 }
 @end

@@ -76,8 +76,8 @@
         
         if (![self validInfo:info])
         {
-            _error = [NSError errorWithDomain:@"www.xiangwangfeng.com"
-                                         code:1
+            _error = [NSError errorWithDomain:M80ERRORDOMAIN
+                                         code:M80MergeErrorNotEnoughOverlap
                                      userInfo:nil];
             doFeed = NO;
         }
