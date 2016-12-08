@@ -9,9 +9,11 @@
 #import "M80RecentImageFinder.h"
 @import Photos;
 
+#define M80LASTSEARCHDATE   @"last_search_date_key"
+
 
 @interface M80RecentImageFinder ()
-@property (nonatomic,strong)    NSDate *lastCheckDate;  //防止每次启动就检查一遍
+@property (nonatomic,strong)    NSDate *lastSearchDate;  //防止每次启动就检查一遍
 @end
 
 @implementation M80RecentImageFinder
@@ -23,8 +25,6 @@
                                                  selector:@selector(onActive:)
                                                      name:UIApplicationDidBecomeActiveNotification
                                                    object:nil];
-        
-        _lastCheckDate = [NSDate dateWithTimeIntervalSince1970:0];
         
     }
     return self;
@@ -51,7 +51,9 @@
                 
                 PHAssetCollection *collection = [recentCollections firstObject];
                 PHFetchResult *result = [PHAsset fetchAssetsInAssetCollection:collection options:fetchOptions];
-                NSDate *date = [NSDate dateWithTimeIntervalSinceNow:- 10 * 60];
+                
+                NSDate *date = [NSDate dateWithTimeIntervalSinceNow:-120];
+                NSDate *lastSearchDate = self.lastSearchDate;
                 
                 NSMutableArray *items = [NSMutableArray array];
                 
@@ -61,7 +63,7 @@
                         PHAsset *asset = (PHAsset *)obj;
                         NSDate *creationDate = asset.creationDate;
                         if ([creationDate timeIntervalSinceDate:date] > 0 &&
-                            [creationDate timeIntervalSinceDate:_lastCheckDate] > 0)
+                            [creationDate timeIntervalSinceDate:lastSearchDate] > 0)
                         {
                             [items addObject:asset];
                         }
@@ -73,7 +75,7 @@
                     [self.delegate onFindRecentImages:items];
                 }
                 
-                _lastCheckDate = [NSDate date];
+                self.lastSearchDate = [NSDate date];
             }
         });
     }];
@@ -82,5 +84,18 @@
 - (void)onActive:(NSNotification *)notification
 {
     [self run];
+}
+
+#pragma mark - lastSearchDate
+- (NSDate *)lastSearchDate
+{
+    NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:M80LASTSEARCHDATE];
+    return date ?: [NSDate dateWithTimeIntervalSince1970:0];
+}
+
+- (void)setLastSearchDate:(NSDate *)lastSearchDate
+{
+    [[NSUserDefaults standardUserDefaults] setObject:lastSearchDate
+                                              forKey:M80LASTSEARCHDATE];
 }
 @end
