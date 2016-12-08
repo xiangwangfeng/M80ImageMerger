@@ -1,57 +1,46 @@
 //
-//  ViewController.m
+//  M80MainInteractor.m
 //  M80ImageMerger
 //
-//  Created by amao on 11/27/15.
-//  Copyright © 2015 M80. All rights reserved.
+//  Created by amao on 2016/12/8.
+//  Copyright © 2016年 M80. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "M80MainInteractor.h"
+#import "M80RecentImageFinder.h"
 #import "CTAssetsPickerController.h"
 #import "M80ImageGenerator.h"
-#import "SVProgressHUD.h"
-#import "M80ImageViewController.h"
-#import "UIView+Toast.h"
-#import "M80RecentImageFinder.h"
-
 
 @import Photos;
 
 typedef void(^M80ImageMergeBlock)(UIImage *image,NSError *error);
 
 
-
-@interface ViewController ()<CTAssetsPickerControllerDelegate,M80RecentImageFinderDelegate>
-{
-    dispatch_queue_t    _queue;
-}
-@property (weak, nonatomic) IBOutlet UIButton *okButton;
-@property (strong,nonatomic) M80RecentImageFinder *finder;
+@interface M80MainInteractor ()<M80RecentImageFinderDelegate,CTAssetsPickerControllerDelegate>
+@property (nonatomic,strong) dispatch_queue_t queue;
+@property (nonatomic,strong) M80RecentImageFinder *finder;
 @end
 
-@implementation ViewController
+@implementation M80MainInteractor
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    _queue = dispatch_queue_create("com.xiangwangfeng.image.queue", 0);
-    
-    _okButton.layer.cornerRadius = 5.0;
-    _okButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
-    _okButton.layer.borderWidth = 1;
-    _okButton.layer.masksToBounds = YES;
-    
-    _finder = [[M80RecentImageFinder alloc] init];
-    _finder.delegate = self;
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        _queue = dispatch_queue_create("com.xiangwangfeng.image.queue", 0);
+        _finder = [[M80RecentImageFinder alloc] init];
+        _finder.delegate = self;
+    }
+    return self;
+}
+
+- (void)run
+{
     [_finder run];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-
-}
-
-- (IBAction)onMergeBegin:(id)sender {
-    
+#pragma mark - User case: choose iamges
+- (void)chooseImages
+{
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (status == PHAuthorizationStatusAuthorized) {
@@ -59,17 +48,16 @@ typedef void(^M80ImageMergeBlock)(UIImage *image,NSError *error);
                 picker.showsSelectionIndex = YES;
                 picker.delegate = self;
                 
-                [self presentViewController:picker
-                                   animated:YES
-                                 completion:nil];
+                [self.delegate presentViewController:picker
+                                            animated:YES
+                                          completion:nil];
             }
             else {
-                [self.view makeToast:NSLocalizedString(@"This app does not have access to your photos", nil)];
+                [self.delegate photosRequestAuthorizationFailed];
             }
         });
     }];
 }
-
 
 - (void)assetsPickerController:(CTAssetsPickerController *)picker didFinishPickingAssets:(NSArray *)assets
 {
@@ -78,8 +66,8 @@ typedef void(^M80ImageMergeBlock)(UIImage *image,NSError *error);
                                    
                                    [self mergeImages:assets
                                           completion:^(UIImage *image, NSError *error) {
-                                              [self showResult:image
-                                                         error:error];
+                                              [self.delegate showResult:image
+                                                                  error:error];
                                           }];
                                    
                                }];
@@ -92,13 +80,15 @@ typedef void(^M80ImageMergeBlock)(UIImage *image,NSError *error);
                                completion:nil];
 }
 
-#pragma mark - 合并图片
+
+#pragma mark - User case: merge images
 - (void)mergeImages:(NSArray *)assets
          completion:(M80ImageMergeBlock)completion
 {
     if ([self validAssets:assets])
     {
-        [SVProgressHUD show];
+        [self.delegate mergeBegin];
+        
         dispatch_async(_queue, ^{
             
             M80ImageGenerator *generator = [self imageGeneratorBy:assets];
@@ -107,9 +97,8 @@ typedef void(^M80ImageMergeBlock)(UIImage *image,NSError *error);
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                [SVProgressHUD dismiss];
-
-       
+                [self.delegate mergeEnd];
+                
                 if (completion) {
                     completion(image,error);
                 }
@@ -125,7 +114,6 @@ typedef void(^M80ImageMergeBlock)(UIImage *image,NSError *error);
                                            userInfo:Nil]);
         }
     }
-    
 }
 
 
@@ -178,62 +166,6 @@ typedef void(^M80ImageMergeBlock)(UIImage *image,NSError *error);
     return valid;
 }
 
-
-#pragma mark - 结果显示
-- (void)showResult:(UIImage *)image
-             error:(NSError *)error
-{
-    if (error)
-    {
-        NSInteger code = [error code];
-        switch (code) {
-            case M80MergeErrorNotSameWidth:
-                [self showNotSameWidthTip];
-                break;
-            case M80MergeErrorNotEnoughOverlap:
-                [self showNotEnoughOverlapError];
-                break;
-            default:
-                assert(0);
-                break;
-        }
-    }
-    else
-    {
-        [self showImage:image];
-    }
-}
-
-- (void)showNotSameWidthTip
-{
-    [self.view makeToast:NSLocalizedString(@"You should choose photos of same width", nil)];
-}
-
-- (void)showNotEnoughOverlapError
-{
-    UIAlertController *controller = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Fail to stitch images", nil)
-                                                                        message:NSLocalizedString(@"No enough overlap contents in these images", nil)
-                                                                 preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil)
-                                                     style:UIAlertActionStyleCancel
-                                                   handler:nil];
-    [controller addAction:action];
-    [self presentViewController:controller
-                       animated:YES
-                     completion:nil];
-}
-
-- (void)showImage:(UIImage *)image
-{
-    M80ImageViewController *vc = [[M80ImageViewController alloc] initWithImage:image];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentViewController:nav
-                       animated:YES
-                     completion:nil];
-}
-
-
-
 #pragma mark - M80RecentImageFinderDelegate
 - (void)onFindRecentImages:(NSArray *)images
 {
@@ -241,7 +173,7 @@ typedef void(^M80ImageMergeBlock)(UIImage *image,NSError *error);
            completion:^(UIImage *image, NSError *error) {
                if (error == nil && image)
                {
-                   [self showImage:image];
+                   [self.delegate showImage:image];
                }
            }];
 }

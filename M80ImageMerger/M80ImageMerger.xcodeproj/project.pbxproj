@@ -11,18 +11,19 @@
 		E40F20101DC87D770063F4DC /* M80ImageMergeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E40F200F1DC87D770063F4DC /* M80ImageMergeInfo.m */; };
 		E412AD9F1C07F773004CC10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E412AD9E1C07F773004CC10B /* main.m */; };
 		E412ADA21C07F773004CC10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADA11C07F773004CC10B /* AppDelegate.m */; };
-		E412ADA51C07F773004CC10B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADA41C07F773004CC10B /* ViewController.m */; };
 		E412ADA81C07F773004CC10B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E412ADA61C07F773004CC10B /* Main.storyboard */; };
 		E412ADAA1C07F773004CC10B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E412ADA91C07F773004CC10B /* Assets.xcassets */; };
 		E412ADAD1C07F773004CC10B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E412ADAB1C07F773004CC10B /* LaunchScreen.storyboard */; };
-		E412ADBA1C07FC13004CC10B /* M80ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADB91C07FC13004CC10B /* M80ImageViewController.m */; };
 		E412ADBD1C080144004CC10B /* UIImage+M80.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADBC1C080144004CC10B /* UIImage+M80.m */; };
 		E412ADC41C08015D004CC10B /* M80ImageFingerprint.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADBF1C08015D004CC10B /* M80ImageFingerprint.m */; };
 		E412ADC51C08015D004CC10B /* M80ImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADC11C08015D004CC10B /* M80ImageGenerator.m */; };
 		E412ADC81C080346004CC10B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E412ADC71C080346004CC10B /* libz.tbd */; };
 		E4176A2D1DCC5A61009E1781 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4176A2F1DCC5A61009E1781 /* Localizable.strings */; };
 		E4176A3C1DCC864B009E1781 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4176A3E1DCC864B009E1781 /* InfoPlist.strings */; };
-		E48157331DF7B88A00AED64D /* M80RecentImageFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = E48157321DF7B88A00AED64D /* M80RecentImageFinder.m */; };
+		E48FFE341DF90580009AA61A /* M80ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE331DF90580009AA61A /* M80ImageViewController.m */; };
+		E48FFE3B1DF9058B009AA61A /* M80RecentImageFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE371DF9058B009AA61A /* M80RecentImageFinder.m */; };
+		E48FFE3C1DF9058B009AA61A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE3A1DF9058B009AA61A /* ViewController.m */; };
+		E48FFE3F1DF905A8009AA61A /* M80MainInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE3E1DF905A8009AA61A /* M80MainInteractor.m */; };
 		E4D9C3CA1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C36F1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m */; };
 		E4D9C3CB1DC7239F004E7452 /* NSDateFormatter+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3711DC7239F004E7452 /* NSDateFormatter+CTAssetsPickerController.m */; };
 		E4D9C3CC1DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3731DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m */; };
@@ -67,14 +68,10 @@
 		E412AD9E1C07F773004CC10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E412ADA01C07F773004CC10B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E412ADA11C07F773004CC10B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E412ADA31C07F773004CC10B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E412ADA41C07F773004CC10B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E412ADA71C07F773004CC10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E412ADA91C07F773004CC10B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E412ADAC1C07F773004CC10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E412ADAE1C07F773004CC10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E412ADB81C07FC13004CC10B /* M80ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageViewController.h; sourceTree = "<group>"; };
-		E412ADB91C07FC13004CC10B /* M80ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80ImageViewController.m; sourceTree = "<group>"; };
 		E412ADBB1C080144004CC10B /* UIImage+M80.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+M80.h"; sourceTree = "<group>"; };
 		E412ADBC1C080144004CC10B /* UIImage+M80.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+M80.m"; sourceTree = "<group>"; };
 		E412ADBE1C08015D004CC10B /* M80ImageFingerprint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageFingerprint.h; sourceTree = "<group>"; };
@@ -89,8 +86,14 @@
 		E4176A341DCC6491009E1781 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E4176A3D1DCC864B009E1781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4176A3F1DCC864E009E1781 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		E48157311DF7B88A00AED64D /* M80RecentImageFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80RecentImageFinder.h; sourceTree = "<group>"; };
-		E48157321DF7B88A00AED64D /* M80RecentImageFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80RecentImageFinder.m; sourceTree = "<group>"; };
+		E48FFE321DF90580009AA61A /* M80ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageViewController.h; sourceTree = "<group>"; };
+		E48FFE331DF90580009AA61A /* M80ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80ImageViewController.m; sourceTree = "<group>"; };
+		E48FFE361DF9058B009AA61A /* M80RecentImageFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80RecentImageFinder.h; sourceTree = "<group>"; };
+		E48FFE371DF9058B009AA61A /* M80RecentImageFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80RecentImageFinder.m; sourceTree = "<group>"; };
+		E48FFE391DF9058B009AA61A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E48FFE3A1DF9058B009AA61A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E48FFE3D1DF905A8009AA61A /* M80MainInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80MainInteractor.h; sourceTree = "<group>"; };
+		E48FFE3E1DF905A8009AA61A /* M80MainInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80MainInteractor.m; sourceTree = "<group>"; };
 		E4D9C36C1DC7239F004E7452 /* CTAssetsPageViewController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPageViewController+Internal.h"; sourceTree = "<group>"; };
 		E4D9C36D1DC7239F004E7452 /* CTAssetsPickerController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPickerController+Internal.h"; sourceTree = "<group>"; };
 		E4D9C36E1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CTAssetsPickerController.h"; sourceTree = "<group>"; };
@@ -208,8 +211,6 @@
 				E412ADB41C07FB7B004CC10B /* Classes */,
 				E412ADA01C07F773004CC10B /* AppDelegate.h */,
 				E412ADA11C07F773004CC10B /* AppDelegate.m */,
-				E412ADA31C07F773004CC10B /* ViewController.h */,
-				E412ADA41C07F773004CC10B /* ViewController.m */,
 				E412ADA61C07F773004CC10B /* Main.storyboard */,
 				E412ADA91C07F773004CC10B /* Assets.xcassets */,
 				E412ADAB1C07F773004CC10B /* LaunchScreen.storyboard */,
@@ -232,7 +233,7 @@
 		E412ADB41C07FB7B004CC10B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E412ADB71C07FBD6004CC10B /* UI */,
+				E48FFE2E1DF904F2009AA61A /* Sections */,
 				E412ADB51C07FB7B004CC10B /* Algorithm */,
 				E412ADB61C07FB7B004CC10B /* Util */,
 			);
@@ -257,19 +258,55 @@
 			children = (
 				E412ADBB1C080144004CC10B /* UIImage+M80.h */,
 				E412ADBC1C080144004CC10B /* UIImage+M80.m */,
-				E48157311DF7B88A00AED64D /* M80RecentImageFinder.h */,
-				E48157321DF7B88A00AED64D /* M80RecentImageFinder.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
 		};
-		E412ADB71C07FBD6004CC10B /* UI */ = {
+		E48FFE2E1DF904F2009AA61A /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				E412ADB81C07FC13004CC10B /* M80ImageViewController.h */,
-				E412ADB91C07FC13004CC10B /* M80ImageViewController.m */,
+				E48FFE2F1DF904F2009AA61A /* Main */,
+				E48FFE311DF904F2009AA61A /* Preview */,
 			);
-			path = UI;
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		E48FFE2F1DF904F2009AA61A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E48FFE351DF9058B009AA61A /* Interactor */,
+				E48FFE381DF9058B009AA61A /* ViewController */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E48FFE311DF904F2009AA61A /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				E48FFE321DF90580009AA61A /* M80ImageViewController.h */,
+				E48FFE331DF90580009AA61A /* M80ImageViewController.m */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		E48FFE351DF9058B009AA61A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E48FFE361DF9058B009AA61A /* M80RecentImageFinder.h */,
+				E48FFE371DF9058B009AA61A /* M80RecentImageFinder.m */,
+				E48FFE3D1DF905A8009AA61A /* M80MainInteractor.h */,
+				E48FFE3E1DF905A8009AA61A /* M80MainInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E48FFE381DF9058B009AA61A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E48FFE391DF9058B009AA61A /* ViewController.h */,
+				E48FFE3A1DF9058B009AA61A /* ViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		E4D9C3691DC7239F004E7452 /* Vendor */ = {
@@ -520,8 +557,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E48FFE3C1DF9058B009AA61A /* ViewController.m in Sources */,
 				E4D9C3E81DC7239F004E7452 /* CTAssetThumbnailOverlay.m in Sources */,
 				E4D9C3D91DC7239F004E7452 /* CTAssetSelectionLabel.m in Sources */,
+				E48FFE3B1DF9058B009AA61A /* M80RecentImageFinder.m in Sources */,
 				E4D9C3E21DC7239F004E7452 /* CTAssetsPageViewController.m in Sources */,
 				E4D9C3E11DC7239F004E7452 /* CTAssetsPageView.m in Sources */,
 				E4D9C3DB1DC7239F004E7452 /* CTAssetsGridView.m in Sources */,
@@ -535,6 +574,7 @@
 				E4D9C3D31DC7239F004E7452 /* CTAssetCollectionViewCell.m in Sources */,
 				E412ADC51C08015D004CC10B /* M80ImageGenerator.m in Sources */,
 				E4D9C3EA1DC7239F004E7452 /* CTAssetThumbnailView.m in Sources */,
+				E48FFE341DF90580009AA61A /* M80ImageViewController.m in Sources */,
 				E4D9C3CA1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m in Sources */,
 				E4D9C3CE1DC7239F004E7452 /* PHAsset+CTAssetsPickerController.m in Sources */,
 				E4D9C3CC1DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m in Sources */,
@@ -546,13 +586,11 @@
 				E4D9C3E51DC7239F004E7452 /* CTAssetsPickerController.m in Sources */,
 				E412ADC41C08015D004CC10B /* M80ImageFingerprint.m in Sources */,
 				E4D9C3D11DC7239F004E7452 /* UIImage+CTAssetsPickerController.m in Sources */,
-				E412ADA51C07F773004CC10B /* ViewController.m in Sources */,
 				E412ADA21C07F773004CC10B /* AppDelegate.m in Sources */,
 				E4D9C3D71DC7239F004E7452 /* CTAssetScrollView.m in Sources */,
-				E48157331DF7B88A00AED64D /* M80RecentImageFinder.m in Sources */,
+				E48FFE3F1DF905A8009AA61A /* M80MainInteractor.m in Sources */,
 				E4D9C3E71DC7239F004E7452 /* CTAssetsViewControllerTransition.m in Sources */,
 				E4D9C3E01DC7239F004E7452 /* CTAssetsNavigationController.m in Sources */,
-				E412ADBA1C07FC13004CC10B /* M80ImageViewController.m in Sources */,
 				E4D9C3E91DC7239F004E7452 /* CTAssetThumbnailStacks.m in Sources */,
 				E4D9C3D61DC7239F004E7452 /* CTAssetPlayButton.m in Sources */,
 				E4D9C3E61DC7239F004E7452 /* CTAssetsPickerNoAssetsView.m in Sources */,
