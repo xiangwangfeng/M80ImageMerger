@@ -19,7 +19,7 @@
 "Fail to save image" = "保存失败";
 
 "This app does not have access to your photos" = "请开启相册权限";
-"You should choose same-width photos" = "请选择相同宽度的图片";
+"You should choose same-width images" = "请选择相同宽度的图片";
 "Fail to stitch images" = "拼接失败";
 "No enough overlap contents in these images" = "请选择有足够重叠内容的图片进行拼接";
 "Try to delete temporary image files" = "清理临时文件";

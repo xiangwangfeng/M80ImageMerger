@@ -90,7 +90,7 @@
 #pragma mark - misc
 - (void)showNotSameWidthTip
 {
-    [self.view makeToast:NSLocalizedString(@"You should choose same-width photos", nil)];
+    [self.view makeToast:NSLocalizedString(@"You should choose same-width images", nil)];
 }
 
 - (void)showNotEnoughOverlapError
