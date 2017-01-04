@@ -71,8 +71,9 @@
 
 - (void)onDismiss:(id)sender
 {
+    dispatch_block_t completion = self.completion;
     [self dismissViewControllerAnimated:YES
-                             completion:nil];
+                             completion:completion];
 }
 
 - (void)onSave:(id)sender

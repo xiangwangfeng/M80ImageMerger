@@ -20,6 +20,7 @@
 		E412ADC81C080346004CC10B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E412ADC71C080346004CC10B /* libz.tbd */; };
 		E4176A2D1DCC5A61009E1781 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4176A2F1DCC5A61009E1781 /* Localizable.strings */; };
 		E4176A3C1DCC864B009E1781 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4176A3E1DCC864B009E1781 /* InfoPlist.strings */; };
+		E47A67101E1C9D19009F4BDE /* M80MergeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E47A670F1E1C9D19009F4BDE /* M80MergeResult.m */; };
 		E48FFE341DF90580009AA61A /* M80ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE331DF90580009AA61A /* M80ImageViewController.m */; };
 		E48FFE3B1DF9058B009AA61A /* M80RecentImageFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE371DF9058B009AA61A /* M80RecentImageFinder.m */; };
 		E48FFE3C1DF9058B009AA61A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE3A1DF9058B009AA61A /* ViewController.m */; };
@@ -86,6 +87,8 @@
 		E4176A341DCC6491009E1781 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E4176A3D1DCC864B009E1781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4176A3F1DCC864E009E1781 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E47A670E1E1C9D19009F4BDE /* M80MergeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80MergeResult.h; sourceTree = "<group>"; };
+		E47A670F1E1C9D19009F4BDE /* M80MergeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80MergeResult.m; sourceTree = "<group>"; };
 		E48FFE321DF90580009AA61A /* M80ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageViewController.h; sourceTree = "<group>"; };
 		E48FFE331DF90580009AA61A /* M80ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80ImageViewController.m; sourceTree = "<group>"; };
 		E48FFE361DF9058B009AA61A /* M80RecentImageFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80RecentImageFinder.h; sourceTree = "<group>"; };
@@ -262,6 +265,15 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		E47A670D1E1C9CE2009F4BDE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E47A670E1E1C9D19009F4BDE /* M80MergeResult.h */,
+				E47A670F1E1C9D19009F4BDE /* M80MergeResult.m */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		E48FFE2E1DF904F2009AA61A /* Sections */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +286,7 @@
 		E48FFE2F1DF904F2009AA61A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E47A670D1E1C9CE2009F4BDE /* Entity */,
 				E48FFE351DF9058B009AA61A /* Interactor */,
 				E48FFE381DF9058B009AA61A /* ViewController */,
 			);
@@ -559,6 +572,7 @@
 			files = (
 				E48FFE3C1DF9058B009AA61A /* ViewController.m in Sources */,
 				E4D9C3E81DC7239F004E7452 /* CTAssetThumbnailOverlay.m in Sources */,
+				E47A67101E1C9D19009F4BDE /* M80MergeResult.m in Sources */,
 				E4D9C3D91DC7239F004E7452 /* CTAssetSelectionLabel.m in Sources */,
 				E48FFE3B1DF9058B009AA61A /* M80RecentImageFinder.m in Sources */,
 				E4D9C3E21DC7239F004E7452 /* CTAssetsPageViewController.m in Sources */,

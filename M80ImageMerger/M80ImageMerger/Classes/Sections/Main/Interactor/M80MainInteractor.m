@@ -13,6 +13,7 @@
 
 @import Photos;
 
+
 typedef void(^M80ImageMergeBlock)(UIImage *image,NSError *error);
 
 
@@ -66,8 +67,11 @@ typedef void(^M80ImageMergeBlock)(UIImage *image,NSError *error);
                                    
                                    [self mergeImages:assets
                                           completion:^(UIImage *image, NSError *error) {
-                                              [self.delegate showResult:image
-                                                                  error:error];
+                                              
+                                              M80MergeResult *result = [M80MergeResult resultBy:image
+                                                                                          error:error
+                                                                                         assets:assets];
+                                              [self.delegate showResult:result];
                                           }];
                                    
                                }];
@@ -173,7 +177,10 @@ typedef void(^M80ImageMergeBlock)(UIImage *image,NSError *error);
            completion:^(UIImage *image, NSError *error) {
                if (error == nil && image)
                {
-                   [self.delegate showImage:image];
+                   M80MergeResult *result = [M80MergeResult resultBy:image
+                                                               error:error
+                                                              assets:images];
+                   [self.delegate showResult:result];
                }
            }];
 }

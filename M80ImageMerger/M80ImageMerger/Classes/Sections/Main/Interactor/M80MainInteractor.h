@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "M80MergeResult.h"
+
+
+
 
 @protocol M80MainIteractorDelegate <NSObject>
 - (void)photosRequestAuthorizationFailed;
@@ -16,15 +20,11 @@
                      animated:(BOOL)flag
                    completion:(void (^)(void))completion;
 
-- (void)showResult:(UIImage *)image
-             error:(NSError *)error;
-
-- (void)showImage:(UIImage *)image;
+- (void)showResult:(M80MergeResult *)result;
 
 - (void)mergeBegin;
 
 - (void)mergeEnd;
-
 @end
 
 @interface M80MainInteractor : NSObject

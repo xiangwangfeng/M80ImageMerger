@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface M80ImageViewController : UIViewController
+@property (nonatomic,copy)  dispatch_block_t completion;
 - (instancetype)initWithImage:(UIImage *)image;
 @end

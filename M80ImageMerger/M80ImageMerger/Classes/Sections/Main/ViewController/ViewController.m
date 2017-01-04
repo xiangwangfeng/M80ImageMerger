@@ -52,9 +52,9 @@
     [self.view makeToast:NSLocalizedString(@"This app does not have access to your photos", nil)];
 }
 
-- (void)showResult:(UIImage *)image
-             error:(NSError *)error
+- (void)showResult:(M80MergeResult *)result
 {
+    NSError *error = result.error;
     if (error)
     {
         NSInteger code = [error code];
@@ -72,30 +72,7 @@
     }
     else
     {
-        [self showImage:image];
-    }
-}
-
-- (void)showImage:(UIImage *)image
-{
-    dispatch_block_t block = ^{
-        
-        M80ImageViewController *vc = [[M80ImageViewController alloc] initWithImage:image];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        [self presentViewController:nav
-                           animated:YES
-                         completion:nil];
-    };
-    
-    
-    if (self.presentedViewController != nil)
-    {
-        [self dismissViewControllerAnimated:YES
-                                 completion:block];
-    }
-    else
-    {
-        block();
+        [self showImageResult:result];
     }
 }
 
@@ -128,6 +105,31 @@
     [self presentViewController:controller
                        animated:YES
                      completion:nil];
+}
+
+- (void)showImageResult:(M80MergeResult *)result
+{
+    dispatch_block_t block = ^{
+        
+        M80ImageViewController *vc = [[M80ImageViewController alloc] initWithImage:result.image];
+        vc.completion = result.completion;
+        
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:nav
+                           animated:YES
+                         completion:nil];
+    };
+    
+    
+    if (self.presentedViewController != nil)
+    {
+        [self dismissViewControllerAnimated:YES
+                                 completion:block];
+    }
+    else
+    {
+        block();
+    }
 }
 
 
