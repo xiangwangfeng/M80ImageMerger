@@ -1,12 +1,14 @@
 Toast for iOS
 =============
 
-[![Build Status](https://travis-ci.org/scalessec/Toast.svg?branch=2.4)](https://travis-ci.org/scalessec/Toast)
+[![Build Status](https://travis-ci.org/scalessec/Toast.svg?branch=3.0)](https://travis-ci.org/scalessec/Toast)
 [![CocoaPods Version](https://img.shields.io/cocoapods/v/Toast.svg)](http://cocoadocs.org/docsets/Toast)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Toast is an Objective-C category that adds toast notifications to the `UIView` object class. It is intended to be simple, lightweight, and easy to use. Most
  toast notifications can be triggered with a single line of code.
 
+**Using Swift? A native swift port of this library is now available: [Toast-Swift](https://github.com/scalessec/Toast-Swift "Toast-Swift")**
 
 Screenshots
 ---------
@@ -80,11 +82,19 @@ Setup Instructions
 Install with [CocoaPods](http://cocoapods.org) by adding the following to your Podfile:
 
 ``` ruby
-platform :ios, '7.0'
-pod 'Toast', '~> 3.0'
+platform :ios, '8.0'
+pod 'Toast', '~> 3.1.0'
 ```
 
-or add manually: 
+Install with [Carthage](https://github.com/Carthage/Carthage) by adding the following to your Cartfile:
+
+```ogdl
+github "scalessec/Toast" ~> 3.1.0
+```
+
+Run `carthage update` to build the framework and link against `Toast.framework`. Then, `#import <Toast/Toast.h>`.
+
+Manually: 
 
 1. Add `UIView+Toast.h` & `UIView+Toast.m` to your project.
 2. Link against QuartzCore.
@@ -92,7 +102,7 @@ or add manually:
 
 MIT License
 -----------
-    Copyright (c) 2011-2015 Charles Scalesse.
+    Copyright (c) 2011-2016 Charles Scalesse.
 
     Permission is hereby granted, free of charge, to any person obtaining a
     copy of this software and associated documentation files (the

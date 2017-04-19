@@ -29,7 +29,7 @@
             } completionHandler:nil];
             
             UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-            [keyWindow makeToast:NSLocalizedString(@"Try to delete temporary image files", nil)];
+            [keyWindow makeToast:@"清理临时文件..."];
         };
     }
     return result;

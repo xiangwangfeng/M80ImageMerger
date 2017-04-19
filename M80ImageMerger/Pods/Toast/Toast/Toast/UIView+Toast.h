@@ -2,7 +2,7 @@
 //  UIView+Toast.h
 //  Toast
 //
-//  Copyright (c) 2011-2015 Charles Scalesse.
+//  Copyright (c) 2011-2016 Charles Scalesse.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the
@@ -123,6 +123,27 @@ extern const NSString * CSToastPositionBottom;
                           style:(CSToastStyle *)style;
 
 /**
+ Dismisses all active toast views. Any toast that is currently being displayed on the
+ screen is considered active.
+ 
+ @warning this does not clear toast views that are currently waiting in the queue. The next queued 
+ toast will appear immediately after `hideToasts` completes the dismissal animation.
+ 
+ */
+- (void)hideToasts;
+
+/**
+ Dismisses an active toast view.
+ 
+ @param toast The active toast view to dismiss. Any toast that is currently being displayed
+ on the screen is considered active. 
+ 
+ @warning this does not clear a toast view that is currently waiting in the queue.
+ 
+ */
+- (void)hideToast:(UIView *)toast;
+
+/**
  Creates and displays a new toast activity indicator view at a specified position.
  
  @warning Only one toast activity indicator view can be presented per superview. Subsequent
@@ -130,11 +151,10 @@ extern const NSString * CSToastPositionBottom;
  
  @warning `makeToastActivity:` works independently of the showToast: methods. Toast activity
  views can be presented and dismissed while toast views are being displayed. `makeToastActivity:`
- has no affect on the queueing behavior of the showToast: methods.
+ has no effect on the queueing behavior of the showToast: methods.
  
  @param position The toast's center point. Can be one of the predefined CSToastPosition
                  constants or a `CGPoint` wrapped in an `NSValue` object.
- @return The newly created toast view
  */
 - (void)makeToastActivity:(id)position;
 
@@ -250,17 +270,22 @@ extern const NSString * CSToastPositionBottom;
 /**
  The maximum number of lines for the title. The default is 0 (no limit).
  */
-@property (assign, nonatomic) CGFloat titleNumberOfLines;
+@property (assign, nonatomic) NSInteger titleNumberOfLines;
 
 /**
  The maximum number of lines for the message. The default is 0 (no limit).
  */
-@property (assign, nonatomic) CGFloat messageNumberOfLines;
+@property (assign, nonatomic) NSInteger messageNumberOfLines;
 
 /**
  Enable or disable a shadow on the toast view. Default is `NO`.
  */
 @property (assign, nonatomic) BOOL displayShadow;
+
+/**
+ The shadow color. Default is `[UIColor blackColor]`.
+ */
+@property (strong, nonatomic) UIColor *shadowColor;
 
 /**
  A value from 0.0 to 1.0, representing the opacity of the shadow.
@@ -290,6 +315,11 @@ extern const NSString * CSToastPositionBottom;
 @property (assign, nonatomic) CGSize activitySize;
 
 /**
+ The fade in/out animation duration. Default is 0.2.
+ */
+@property (assign, nonatomic) NSTimeInterval fadeDuration;
+
+/**
  Creates a new instance of `CSToastStyle` with all the default values set.
  */
 - (instancetype)initWithDefaultStyle NS_DESIGNATED_INITIALIZER;
@@ -314,7 +344,7 @@ extern const NSString * CSToastPositionBottom;
  with with a nil style. By default, this is set to `CSToastStyle`'s default
  style.
  
- @param sharedStyle
+ @param sharedStyle the shared style
  */
 + (void)setSharedStyle:(CSToastStyle *)sharedStyle;
 
@@ -329,7 +359,7 @@ extern const NSString * CSToastPositionBottom;
 /**
  Enables or disables tap to dismiss on toast views. Default is `YES`.
  
- @param allowTapToDismiss
+ @param tapToDismissEnabled YES or NO
  */
 + (void)setTapToDismissEnabled:(BOOL)tapToDismissEnabled;
 
@@ -337,7 +367,7 @@ extern const NSString * CSToastPositionBottom;
  Returns `YES` if tap to dismiss is enabled, otherwise `NO`.
  Default is `YES`.
  
- @return BOOL
+ @return BOOL YES or NO
  */
 + (BOOL)isTapToDismissEnabled;
 
@@ -345,10 +375,10 @@ extern const NSString * CSToastPositionBottom;
  Enables or disables queueing behavior for toast views. When `YES`,
  toast views will appear one after the other. When `NO`, multiple Toast
  views will appear at the same time (potentially overlapping depending
- on their positions). This has no affect on the toast activity view,
+ on their positions). This has no effect on the toast activity view,
  which operates independently of normal toast views. Default is `YES`.
  
- @param queueEnabled
+ @param queueEnabled YES or NO
  */
 + (void)setQueueEnabled:(BOOL)queueEnabled;
 

@@ -7,24 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BFB35A3575FE15DEDA6181D /* libPods-M80WebViewSaver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 353403597C3425388A619757 /* libPods-M80WebViewSaver.a */; };
 		6D592EFA47D2987BC413A9AC /* libPods-M80ImageMerger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E3D775952E0285E8C6EFEB /* libPods-M80ImageMerger.a */; };
 		E40F20101DC87D770063F4DC /* M80ImageMergeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E40F200F1DC87D770063F4DC /* M80ImageMergeInfo.m */; };
 		E412AD9F1C07F773004CC10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E412AD9E1C07F773004CC10B /* main.m */; };
 		E412ADA21C07F773004CC10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADA11C07F773004CC10B /* AppDelegate.m */; };
-		E412ADA81C07F773004CC10B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E412ADA61C07F773004CC10B /* Main.storyboard */; };
 		E412ADAA1C07F773004CC10B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E412ADA91C07F773004CC10B /* Assets.xcassets */; };
-		E412ADAD1C07F773004CC10B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E412ADAB1C07F773004CC10B /* LaunchScreen.storyboard */; };
 		E412ADBD1C080144004CC10B /* UIImage+M80.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADBC1C080144004CC10B /* UIImage+M80.m */; };
 		E412ADC41C08015D004CC10B /* M80ImageFingerprint.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADBF1C08015D004CC10B /* M80ImageFingerprint.m */; };
 		E412ADC51C08015D004CC10B /* M80ImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADC11C08015D004CC10B /* M80ImageGenerator.m */; };
 		E412ADC81C080346004CC10B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E412ADC71C080346004CC10B /* libz.tbd */; };
-		E4176A2D1DCC5A61009E1781 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4176A2F1DCC5A61009E1781 /* Localizable.strings */; };
-		E4176A3C1DCC864B009E1781 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4176A3E1DCC864B009E1781 /* InfoPlist.strings */; };
 		E47A67101E1C9D19009F4BDE /* M80MergeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E47A670F1E1C9D19009F4BDE /* M80MergeResult.m */; };
+		E488F9001EA5FA0800510FD9 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488F8FF1EA5FA0800510FD9 /* ActionViewController.m */; };
+		E488F9071EA5FA0800510FD9 /* M80WebViewSaver.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E488F8FC1EA5FA0800510FD9 /* M80WebViewSaver.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E48FFE341DF90580009AA61A /* M80ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE331DF90580009AA61A /* M80ImageViewController.m */; };
 		E48FFE3B1DF9058B009AA61A /* M80RecentImageFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE371DF9058B009AA61A /* M80RecentImageFinder.m */; };
 		E48FFE3C1DF9058B009AA61A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE3A1DF9058B009AA61A /* ViewController.m */; };
 		E48FFE3F1DF905A8009AA61A /* M80MainInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE3E1DF905A8009AA61A /* M80MainInteractor.m */; };
+		E49998611EA73A350005CFC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499985D1EA73A350005CFC1 /* LaunchScreen.storyboard */; };
+		E49998621EA73A350005CFC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499985F1EA73A350005CFC1 /* Main.storyboard */; };
 		E4D9C3CA1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C36F1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m */; };
 		E4D9C3CB1DC7239F004E7452 /* NSDateFormatter+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3711DC7239F004E7452 /* NSDateFormatter+CTAssetsPickerController.m */; };
 		E4D9C3CC1DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3731DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m */; };
@@ -60,8 +61,35 @@
 		E4D9C3EA1DC7239F004E7452 /* CTAssetThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3AF1DC7239F004E7452 /* CTAssetThumbnailView.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E488F9051EA5FA0800510FD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E412AD921C07F773004CC10B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E488F8FB1EA5FA0800510FD9;
+			remoteInfo = M80WebViewSaver;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E488F90B1EA5FA0800510FD9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E488F9071EA5FA0800510FD9 /* M80WebViewSaver.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		217C5321FAFEABD39CBCC97D /* Pods-M80WebViewSaver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M80WebViewSaver.release.xcconfig"; path = "Pods/Target Support Files/Pods-M80WebViewSaver/Pods-M80WebViewSaver.release.xcconfig"; sourceTree = "<group>"; };
+		353403597C3425388A619757 /* libPods-M80WebViewSaver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-M80WebViewSaver.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		414EF75E954CCD25DEDAA5B5 /* Pods-M80ImageMerger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M80ImageMerger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-M80ImageMerger/Pods-M80ImageMerger.debug.xcconfig"; sourceTree = "<group>"; };
+		7847E6243D2B9D02BCF6D321 /* Pods-M80WebViewSaver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M80WebViewSaver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-M80WebViewSaver/Pods-M80WebViewSaver.debug.xcconfig"; sourceTree = "<group>"; };
 		B0D108C5A7CA2D9971D7C086 /* Pods-M80ImageMerger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M80ImageMerger.release.xcconfig"; path = "Pods/Target Support Files/Pods-M80ImageMerger/Pods-M80ImageMerger.release.xcconfig"; sourceTree = "<group>"; };
 		D3E3D775952E0285E8C6EFEB /* libPods-M80ImageMerger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-M80ImageMerger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40F200F1DC87D770063F4DC /* M80ImageMergeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80ImageMergeInfo.m; sourceTree = "<group>"; };
@@ -69,9 +97,7 @@
 		E412AD9E1C07F773004CC10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E412ADA01C07F773004CC10B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E412ADA11C07F773004CC10B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E412ADA71C07F773004CC10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E412ADA91C07F773004CC10B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E412ADAC1C07F773004CC10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E412ADAE1C07F773004CC10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E412ADBB1C080144004CC10B /* UIImage+M80.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+M80.h"; sourceTree = "<group>"; };
 		E412ADBC1C080144004CC10B /* UIImage+M80.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+M80.m"; sourceTree = "<group>"; };
@@ -81,14 +107,12 @@
 		E412ADC11C08015D004CC10B /* M80ImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80ImageGenerator.m; sourceTree = "<group>"; };
 		E412ADC21C08015D004CC10B /* M80ImageMergeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageMergeInfo.h; sourceTree = "<group>"; };
 		E412ADC71C080346004CC10B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		E4150BB21C0851F000EFB4F5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		E4176A301DCC5A64009E1781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E4176A311DCC5A6A009E1781 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		E4176A341DCC6491009E1781 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		E4176A3D1DCC864B009E1781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E4176A3F1DCC864E009E1781 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E47A670E1E1C9D19009F4BDE /* M80MergeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80MergeResult.h; sourceTree = "<group>"; };
 		E47A670F1E1C9D19009F4BDE /* M80MergeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80MergeResult.m; sourceTree = "<group>"; };
+		E488F8FC1EA5FA0800510FD9 /* M80WebViewSaver.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = M80WebViewSaver.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E488F8FE1EA5FA0800510FD9 /* ActionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
+		E488F8FF1EA5FA0800510FD9 /* ActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
+		E488F9041EA5FA0800510FD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E48FFE321DF90580009AA61A /* M80ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80ImageViewController.h; sourceTree = "<group>"; };
 		E48FFE331DF90580009AA61A /* M80ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80ImageViewController.m; sourceTree = "<group>"; };
 		E48FFE361DF9058B009AA61A /* M80RecentImageFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80RecentImageFinder.h; sourceTree = "<group>"; };
@@ -97,6 +121,8 @@
 		E48FFE3A1DF9058B009AA61A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E48FFE3D1DF905A8009AA61A /* M80MainInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80MainInteractor.h; sourceTree = "<group>"; };
 		E48FFE3E1DF905A8009AA61A /* M80MainInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80MainInteractor.m; sourceTree = "<group>"; };
+		E499985E1EA73A350005CFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E49998601EA73A350005CFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4D9C36C1DC7239F004E7452 /* CTAssetsPageViewController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPageViewController+Internal.h"; sourceTree = "<group>"; };
 		E4D9C36D1DC7239F004E7452 /* CTAssetsPickerController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPickerController+Internal.h"; sourceTree = "<group>"; };
 		E4D9C36E1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CTAssetsPickerController.h"; sourceTree = "<group>"; };
@@ -177,6 +203,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E488F8F91EA5FA0800510FD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB35A3575FE15DEDA6181D /* libPods-M80WebViewSaver.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -185,6 +219,7 @@
 			children = (
 				E412ADC71C080346004CC10B /* libz.tbd */,
 				D3E3D775952E0285E8C6EFEB /* libPods-M80ImageMerger.a */,
+				353403597C3425388A619757 /* libPods-M80WebViewSaver.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				E412AD9C1C07F773004CC10B /* M80ImageMerger */,
+				E488F8FD1EA5FA0800510FD9 /* M80WebViewSaver */,
 				E412AD9B1C07F773004CC10B /* Products */,
 				42925B1628401C5D35BEBCC2 /* Frameworks */,
 				F99E391C4AE4E7DDCEFE38AC /* Pods */,
@@ -203,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				E412AD9A1C07F773004CC10B /* M80ImageMerger.app */,
+				E488F8FC1EA5FA0800510FD9 /* M80WebViewSaver.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,12 +251,8 @@
 				E412ADB41C07FB7B004CC10B /* Classes */,
 				E412ADA01C07F773004CC10B /* AppDelegate.h */,
 				E412ADA11C07F773004CC10B /* AppDelegate.m */,
-				E412ADA61C07F773004CC10B /* Main.storyboard */,
 				E412ADA91C07F773004CC10B /* Assets.xcassets */,
-				E412ADAB1C07F773004CC10B /* LaunchScreen.storyboard */,
 				E412ADAE1C07F773004CC10B /* Info.plist */,
-				E4176A2F1DCC5A61009E1781 /* Localizable.strings */,
-				E4176A3E1DCC864B009E1781 /* InfoPlist.strings */,
 				E412AD9D1C07F773004CC10B /* Supporting Files */,
 			);
 			path = M80ImageMerger;
@@ -228,6 +261,8 @@
 		E412AD9D1C07F773004CC10B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E499985D1EA73A350005CFC1 /* LaunchScreen.storyboard */,
+				E499985F1EA73A350005CFC1 /* Main.storyboard */,
 				E412AD9E1C07F773004CC10B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -272,6 +307,16 @@
 				E47A670F1E1C9D19009F4BDE /* M80MergeResult.m */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		E488F8FD1EA5FA0800510FD9 /* M80WebViewSaver */ = {
+			isa = PBXGroup;
+			children = (
+				E488F8FE1EA5FA0800510FD9 /* ActionViewController.h */,
+				E488F8FF1EA5FA0800510FD9 /* ActionViewController.m */,
+				E488F9041EA5FA0800510FD9 /* Info.plist */,
+			);
+			path = M80WebViewSaver;
 			sourceTree = "<group>";
 		};
 		E48FFE2E1DF904F2009AA61A /* Sections */ = {
@@ -418,6 +463,8 @@
 			children = (
 				414EF75E954CCD25DEDAA5B5 /* Pods-M80ImageMerger.debug.xcconfig */,
 				B0D108C5A7CA2D9971D7C086 /* Pods-M80ImageMerger.release.xcconfig */,
+				7847E6243D2B9D02BCF6D321 /* Pods-M80WebViewSaver.debug.xcconfig */,
+				217C5321FAFEABD39CBCC97D /* Pods-M80WebViewSaver.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -435,15 +482,36 @@
 				E412AD981C07F773004CC10B /* Resources */,
 				C873E98114D55C5DA95247CC /* [CP] Embed Pods Frameworks */,
 				74FDD75D3835FAF36C267850 /* [CP] Copy Pods Resources */,
+				E488F90B1EA5FA0800510FD9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E488F9061EA5FA0800510FD9 /* PBXTargetDependency */,
 			);
 			name = M80ImageMerger;
 			productName = M80ImageMerger;
 			productReference = E412AD9A1C07F773004CC10B /* M80ImageMerger.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E488F8FB1EA5FA0800510FD9 /* M80WebViewSaver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E488F90A1EA5FA0800510FD9 /* Build configuration list for PBXNativeTarget "M80WebViewSaver" */;
+			buildPhases = (
+				3CC5C5172467CFACB18457E3 /* [CP] Check Pods Manifest.lock */,
+				E488F8F81EA5FA0800510FD9 /* Sources */,
+				E488F8F91EA5FA0800510FD9 /* Frameworks */,
+				E488F8FA1EA5FA0800510FD9 /* Resources */,
+				C664302B211E13CEFC3123E1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = M80WebViewSaver;
+			productName = M80WebViewSaver;
+			productReference = E488F8FC1EA5FA0800510FD9 /* M80WebViewSaver.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -459,6 +527,11 @@
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = F79NZ79TVZ;
 					};
+					E488F8FB1EA5FA0800510FD9 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = F79NZ79TVZ;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = E412AD951C07F773004CC10B /* Build configuration list for PBXProject "M80ImageMerger" */;
@@ -467,12 +540,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
-				ar,
 				da,
 				de,
-				"es-MX",
-				es,
 				fi,
 				fr,
 				he,
@@ -482,14 +551,12 @@
 				it,
 				ja,
 				ko,
-				"nl-NL",
 				nl,
 				"pt-PT",
 				pt,
-				ru,
-				sv,
 				"zh-Hans",
 				"zh-Hant",
+				Base,
 			);
 			mainGroup = E412AD911C07F773004CC10B;
 			productRefGroup = E412AD9B1C07F773004CC10B /* Products */;
@@ -497,6 +564,7 @@
 			projectRoot = "";
 			targets = (
 				E412AD991C07F773004CC10B /* M80ImageMerger */,
+				E488F8FB1EA5FA0800510FD9 /* M80WebViewSaver */,
 			);
 		};
 /* End PBXProject section */
@@ -506,18 +574,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4176A2D1DCC5A61009E1781 /* Localizable.strings in Resources */,
-				E4176A3C1DCC864B009E1781 /* InfoPlist.strings in Resources */,
-				E412ADAD1C07F773004CC10B /* LaunchScreen.storyboard in Resources */,
+				E49998611EA73A350005CFC1 /* LaunchScreen.storyboard in Resources */,
 				E412ADAA1C07F773004CC10B /* Assets.xcassets in Resources */,
-				E412ADA81C07F773004CC10B /* Main.storyboard in Resources */,
 				E4D9C3E41DC7239F004E7452 /* CTAssetsPickerController.bundle in Resources */,
+				E49998621EA73A350005CFC1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E488F8FA1EA5FA0800510FD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3CC5C5172467CFACB18457E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		74FDD75D3835FAF36C267850 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -531,6 +619,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-M80ImageMerger/Pods-M80ImageMerger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C664302B211E13CEFC3123E1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-M80WebViewSaver/Pods-M80WebViewSaver-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C873E98114D55C5DA95247CC /* [CP] Embed Pods Frameworks */ = {
@@ -560,7 +663,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -616,44 +719,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E488F8F81EA5FA0800510FD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E488F9001EA5FA0800510FD9 /* ActionViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		E412ADA61C07F773004CC10B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E412ADA71C07F773004CC10B /* Base */,
-				E4150BB21C0851F000EFB4F5 /* zh-Hans */,
-				E4176A341DCC6491009E1781 /* en */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		E488F9061EA5FA0800510FD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E488F8FB1EA5FA0800510FD9 /* M80WebViewSaver */;
+			targetProxy = E488F9051EA5FA0800510FD9 /* PBXContainerItemProxy */;
 		};
-		E412ADAB1C07F773004CC10B /* LaunchScreen.storyboard */ = {
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E499985D1EA73A350005CFC1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E412ADAC1C07F773004CC10B /* Base */,
+				E499985E1EA73A350005CFC1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		E4176A2F1DCC5A61009E1781 /* Localizable.strings */ = {
+		E499985F1EA73A350005CFC1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E4176A301DCC5A64009E1781 /* Base */,
-				E4176A311DCC5A6A009E1781 /* zh-Hans */,
+				E49998601EA73A350005CFC1 /* Base */,
 			);
-			name = Localizable.strings;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		E4176A3E1DCC864B009E1781 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4176A3D1DCC864B009E1781 /* Base */,
-				E4176A3F1DCC864E009E1781 /* zh-Hans */,
-			);
-			name = InfoPlist.strings;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -779,6 +877,52 @@
 			};
 			name = Release;
 		};
+		E488F9081EA5FA0800510FD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7847E6243D2B9D02BCF6D321 /* Pods-M80WebViewSaver.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F79NZ79TVZ;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
+				INFOPLIST_FILE = M80WebViewSaver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.xiangwangfeng.com.centaur.M80WebViewSaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E488F9091EA5FA0800510FD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 217C5321FAFEABD39CBCC97D /* Pods-M80WebViewSaver.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F79NZ79TVZ;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
+				INFOPLIST_FILE = M80WebViewSaver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.xiangwangfeng.com.centaur.M80WebViewSaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -796,6 +940,15 @@
 			buildConfigurations = (
 				E412ADB21C07F773004CC10B /* Debug */,
 				E412ADB31C07F773004CC10B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E488F90A1EA5FA0800510FD9 /* Build configuration list for PBXNativeTarget "M80WebViewSaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E488F9081EA5FA0800510FD9 /* Debug */,
+				E488F9091EA5FA0800510FD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

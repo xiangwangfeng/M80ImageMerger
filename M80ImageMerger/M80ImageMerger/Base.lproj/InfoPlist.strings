@@ -1,9 +1,0 @@
-/* 
-  InfoPlist.strings
-  M80ImageMerger
-
-  Created by amao on 2016/11/4.
-  Copyright © 2016年 M80. All rights reserved.
-*/
-
-"NSPhotoLibraryUsageDescription" = "This app will use your photos";

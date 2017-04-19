@@ -49,7 +49,7 @@
 #pragma mark - M80MainIteractorDelegate
 - (void)photosRequestAuthorizationFailed
 {
-    [self.view makeToast:NSLocalizedString(@"This app does not have access to your photos", nil)];
+    [self.view makeToast:@"请开启相册权限"];
 }
 
 - (void)showResult:(M80MergeResult *)result
@@ -90,15 +90,15 @@
 #pragma mark - misc
 - (void)showNotSameWidthTip
 {
-    [self.view makeToast:NSLocalizedString(@"You should choose same-width images", nil)];
+    [self.view makeToast:@"请选择相同宽度的图片"];
 }
 
 - (void)showNotEnoughOverlapError
 {
-    UIAlertController *controller = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Fail to stitch images", nil)
-                                                                        message:NSLocalizedString(@"No enough overlap contents in these images", nil)
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"拼接失败"
+                                                                        message:@"请选择有足够重叠内容的图片进行拼接"
                                                                  preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil)
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定"
                                                      style:UIAlertActionStyleCancel
                                                    handler:nil];
     [controller addAction:action];
