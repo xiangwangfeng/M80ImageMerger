@@ -26,6 +26,7 @@
 		E48FFE3F1DF905A8009AA61A /* M80MainInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE3E1DF905A8009AA61A /* M80MainInteractor.m */; };
 		E49998611EA73A350005CFC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499985D1EA73A350005CFC1 /* LaunchScreen.storyboard */; };
 		E49998621EA73A350005CFC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499985F1EA73A350005CFC1 /* Main.storyboard */; };
+		E49998651EA73ED60005CFC1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49998631EA73ED60005CFC1 /* MainInterface.storyboard */; };
 		E4D9C3CA1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C36F1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.m */; };
 		E4D9C3CB1DC7239F004E7452 /* NSDateFormatter+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3711DC7239F004E7452 /* NSDateFormatter+CTAssetsPickerController.m */; };
 		E4D9C3CC1DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D9C3731DC7239F004E7452 /* NSIndexSet+CTAssetsPickerController.m */; };
@@ -123,6 +124,7 @@
 		E48FFE3E1DF905A8009AA61A /* M80MainInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80MainInteractor.m; sourceTree = "<group>"; };
 		E499985E1EA73A350005CFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E49998601EA73A350005CFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E49998641EA73ED60005CFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E4D9C36C1DC7239F004E7452 /* CTAssetsPageViewController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPageViewController+Internal.h"; sourceTree = "<group>"; };
 		E4D9C36D1DC7239F004E7452 /* CTAssetsPickerController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPickerController+Internal.h"; sourceTree = "<group>"; };
 		E4D9C36E1DC7239F004E7452 /* NSBundle+CTAssetsPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CTAssetsPickerController.h"; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		E488F8FD1EA5FA0800510FD9 /* M80WebViewSaver */ = {
 			isa = PBXGroup;
 			children = (
+				E49998631EA73ED60005CFC1 /* MainInterface.storyboard */,
 				E488F8FE1EA5FA0800510FD9 /* ActionViewController.h */,
 				E488F8FF1EA5FA0800510FD9 /* ActionViewController.m */,
 				E488F9041EA5FA0800510FD9 /* Info.plist */,
@@ -585,6 +588,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E49998651EA73ED60005CFC1 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +756,14 @@
 				E49998601EA73A350005CFC1 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E49998631EA73ED60005CFC1 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E49998641EA73ED60005CFC1 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -28,8 +28,20 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在手机上从上到下连续截屏，并保证约有 20% 的重叠部分，然后选择拼接" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4o-bH-xAc">
-                                <rect key="frame" x="46" y="142" width="283" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.在其他 App 中从上至下连续截屏" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4o-bH-xAc">
+                                <rect key="frame" x="46" y="172" width="283" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.保证约有 20% 重叠部分" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfT-MC-QfX">
+                                <rect key="frame" x="46" y="213" width="283" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.选取图片进行拼接" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cve-ry-oGg">
+                                <rect key="frame" x="46" y="295" width="283" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -48,16 +60,31 @@
                                     <action selector="onMergeBegin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zJy-t8-VRB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.回到当前 App 选择开始拼接" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfF-rI-GSC">
+                                <rect key="frame" x="46" y="254" width="283" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ULV-xC-0Ab" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="6Uo-GQ-kyq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z4o-bH-xAc" secondAttribute="trailing" constant="30" id="6iZ-lA-Die"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cve-ry-oGg" secondAttribute="trailing" constant="30" id="7M7-sv-zdB"/>
                             <constraint firstItem="AI5-Yx-Bgh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Vt-tC-Vev"/>
+                            <constraint firstItem="NfT-MC-QfX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="Cws-Hn-RhE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AI5-Yx-Bgh" secondAttribute="bottom" constant="100" id="Du4-Ft-FLL"/>
-                            <constraint firstItem="Z4o-bH-xAc" firstAttribute="top" secondItem="ULV-xC-0Ab" secondAttribute="bottom" constant="20" id="EWz-dH-9Sa"/>
+                            <constraint firstItem="Z4o-bH-xAc" firstAttribute="top" secondItem="ULV-xC-0Ab" secondAttribute="bottom" constant="50" id="EWz-dH-9Sa"/>
+                            <constraint firstItem="DfF-rI-GSC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="JnH-Fa-MmF"/>
                             <constraint firstAttribute="trailing" secondItem="ULV-xC-0Ab" secondAttribute="trailing" id="Y26-PA-sB1"/>
                             <constraint firstItem="ULV-xC-0Ab" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bTd-7g-BW8"/>
+                            <constraint firstItem="cve-ry-oGg" firstAttribute="top" secondItem="DfF-rI-GSC" secondAttribute="bottom" constant="20" id="j08-aQ-bXZ"/>
+                            <constraint firstItem="cve-ry-oGg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="lO9-tR-CCJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DfF-rI-GSC" secondAttribute="trailing" constant="30" id="lrB-yK-KBc"/>
+                            <constraint firstItem="DfF-rI-GSC" firstAttribute="top" secondItem="NfT-MC-QfX" secondAttribute="bottom" constant="20" id="lv0-GU-NNw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NfT-MC-QfX" secondAttribute="trailing" constant="30" id="qgk-MX-e0L"/>
+                            <constraint firstItem="NfT-MC-QfX" firstAttribute="top" secondItem="Z4o-bH-xAc" secondAttribute="bottom" constant="20" id="reM-gz-UGW"/>
                             <constraint firstItem="ULV-xC-0Ab" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="53" id="tYx-Kf-26L"/>
                             <constraint firstItem="Z4o-bH-xAc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="zXg-jC-00f"/>
                         </constraints>
@@ -73,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="271.19999999999999" y="-16.641679160419791"/>
+            <point key="canvasLocation" x="586" y="-19"/>
         </scene>
     </scenes>
 </document>
