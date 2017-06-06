@@ -71,9 +71,7 @@
 
 - (void)onDismiss:(id)sender
 {
-    dispatch_block_t completion = self.completion;
-    [self dismissViewControllerAnimated:YES
-                             completion:completion];
+    [self dismiss];
 }
 
 - (void)onSave:(id)sender
@@ -85,7 +83,25 @@
 didFinishSavingWithError:(NSError *) error
   contextInfo:(void *) contextInfo
 {
-    [self.view makeToast:error ? @"保存图片失败" : @"保存图片成功"];
+    if (error)
+    {
+        [self.view makeToast:@"保存图片失败"];
+    }
+    else
+    {
+        UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+        [keyWindow makeToast:@"保存图片成功"];
+        [self dismiss];
+    }
+    
+    
+}
+
+- (void)dismiss
+{
+    dispatch_block_t completion = self.completion;
+    [self dismissViewControllerAnimated:YES
+                             completion:completion];
 }
 @end
 
