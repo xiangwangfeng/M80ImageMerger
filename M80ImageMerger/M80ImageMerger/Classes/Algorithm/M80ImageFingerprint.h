@@ -9,8 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+    M80FingerprintTypeCRC,
+    M80FingerprintTypeMin,  //实验性方案
+} M80FingerprintType;
+
+
 
 @interface M80ImageFingerprint : NSObject
 @property (nonatomic,strong)    NSArray *lines;
-+ (instancetype)fingerprint:(UIImage *)image;
++ (instancetype)fingerprint:(UIImage *)image
+                       type:(M80FingerprintType)type;
+
 @end

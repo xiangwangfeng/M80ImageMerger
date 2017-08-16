@@ -7,20 +7,21 @@
 //
 
 #import "M80ImageMergeInfo.h"
-#import "M80ImageFingerprint.h"
+
 
 @implementation M80ImageMergeInfo
 
 + (instancetype)infoBy:(UIImage *)firstImage
            secondImage:(UIImage *)secondImage
+                  type:(M80FingerprintType)type
 {
     M80ImageMergeInfo *info = [[M80ImageMergeInfo alloc] init];
     info.firstImage = firstImage;
     info.secondImage = secondImage;
     
     
-    M80ImageFingerprint *firstFingerprint = [M80ImageFingerprint fingerprint:firstImage];
-    M80ImageFingerprint *secondFingerprint= [M80ImageFingerprint fingerprint:secondImage];
+    M80ImageFingerprint *firstFingerprint = [M80ImageFingerprint fingerprint:firstImage type:type];
+    M80ImageFingerprint *secondFingerprint= [M80ImageFingerprint fingerprint:secondImage type:type];
     
     NSArray *firstLines = [firstFingerprint lines];
     NSArray *secondLines= [secondFingerprint lines];
@@ -46,7 +47,11 @@
     {
         for (NSInteger  j = 0; j < secondLinesCount; j++)
         {
-            if ([firstLines[i] longLongValue] == [secondLines[j] longLongValue])
+            int64_t firstValue = [firstLines[i] longLongValue];
+            int64_t secondValue = [secondLines[j] longLongValue];
+            
+            if (firstValue * 1.1 >= secondValue &&
+                firstValue * 0.9 <= secondValue)
             {
                 int value = 0;
                 if (j != 0)

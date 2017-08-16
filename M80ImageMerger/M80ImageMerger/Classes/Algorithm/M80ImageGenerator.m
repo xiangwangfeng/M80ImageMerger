@@ -72,7 +72,16 @@
     if (doFeed)
     {
         M80ImageMergeInfo *info = [M80ImageMergeInfo infoBy:baseImage
-                                                secondImage:image];
+                                                secondImage:image
+                                                       type:M80FingerprintTypeCRC];
+        
+        if (![self validInfo:info])
+        {
+            // CRC 这种较严格匹配失败的话，尝试下比较宽松的匹配 （容易出现误匹配
+            info = [M80ImageMergeInfo infoBy:baseImage
+                                 secondImage:image
+                                        type:M80FingerprintTypeMin];
+        }
         
         if (![self validInfo:info])
         {
@@ -98,7 +107,8 @@
     NSInteger length = info.length;
     return threshold > 0 &&
            length > (NSInteger)threshold &&
-           firstOffset >= ignoreOffset;
+           firstOffset >= ignoreOffset &&
+           info.secondOffset > info.firstOffset;
 }
 
 - (UIImage *)generate
