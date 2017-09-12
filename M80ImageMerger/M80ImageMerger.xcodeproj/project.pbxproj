@@ -103,6 +103,7 @@
 		E48FFE3A1DF9058B009AA61A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E48FFE3D1DF905A8009AA61A /* M80MainInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80MainInteractor.h; sourceTree = "<group>"; };
 		E48FFE3E1DF905A8009AA61A /* M80MainInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80MainInteractor.m; sourceTree = "<group>"; };
+		E4998A7B1F677AD50064B356 /* M80Defs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M80Defs.h; sourceTree = "<group>"; };
 		E499985E1EA73A350005CFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E49998601EA73A350005CFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4D9C36C1DC7239F004E7452 /* CTAssetsPageViewController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPageViewController+Internal.h"; sourceTree = "<group>"; };
@@ -259,6 +260,7 @@
 				E412ADC11C08015D004CC10B /* M80ImageGenerator.m */,
 				E412ADC21C08015D004CC10B /* M80ImageMergeInfo.h */,
 				E40F200F1DC87D770063F4DC /* M80ImageMergeInfo.m */,
+				E4998A7B1F677AD50064B356 /* M80Defs.h */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";

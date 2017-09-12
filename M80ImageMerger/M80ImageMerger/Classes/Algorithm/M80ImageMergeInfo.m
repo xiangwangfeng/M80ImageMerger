@@ -7,7 +7,7 @@
 //
 
 #import "M80ImageMergeInfo.h"
-
+#import "M80Defs.h"
 
 @implementation M80ImageMergeInfo
 
@@ -37,21 +37,22 @@
     }
     for (NSInteger j = 0; j < secondLinesCount; j++)
     {
-        matrix[0][j] = firstLines[0] == secondLines[j] ? 1 : 0;
+        matrix[0][j] = matrix[1][j] = 0;
+        
     }
+    
     
     
     //遍历并合并
     NSInteger length = 0,x = 0,y = 0;
-    for (NSInteger i = 1 ; i < firstLinesCount; i ++)
+    for (NSInteger i = M80ImageIgnoreOffset; i < firstLinesCount; i ++)
     {
-        for (NSInteger  j = 0; j < secondLinesCount; j++)
+        for (NSInteger  j = M80ImageIgnoreOffset; j < secondLinesCount; j++)
         {
             int64_t firstValue = [firstLines[i] longLongValue];
             int64_t secondValue = [secondLines[j] longLongValue];
             
-            if (firstValue * 1.1 >= secondValue &&
-                firstValue * 0.9 <= secondValue)
+            if (M80PixelValueEqual(firstValue,secondValue))
             {
                 int value = 0;
                 if (j != 0)

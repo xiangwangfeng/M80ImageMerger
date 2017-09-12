@@ -24,12 +24,15 @@
     {
         result.completion = ^(){
         
+#ifndef DEBUG
+            UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+            [keyWindow makeToast:@"清理临时文件..."];
+            
             [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
                 [PHAssetChangeRequest deleteAssets:assets];
             } completionHandler:nil];
-            
-            UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-            [keyWindow makeToast:@"清理临时文件..."];
+#endif
+
         };
     }
     return result;

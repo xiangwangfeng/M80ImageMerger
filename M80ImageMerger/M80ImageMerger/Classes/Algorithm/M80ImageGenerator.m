@@ -9,6 +9,7 @@
 #import "M80ImageGenerator.h"
 #import "M80ImageMergeInfo.h"
 #import "UIImage+M80.h"
+#import "M80Defs.h"
 
 @interface M80ImageGenerator ()
 @property (nonatomic,strong)    UIImage *firstImage;
@@ -74,16 +75,18 @@
         M80ImageMergeInfo *info = [M80ImageMergeInfo infoBy:baseImage
                                                 secondImage:image
                                                        type:M80FingerprintTypeCRC];
+        BOOL success =[self validInfo:info];
         
-        if (![self validInfo:info])
+        if (!success)
         {
             // CRC 这种较严格匹配失败的话，尝试下比较宽松的匹配 （容易出现误匹配
             info = [M80ImageMergeInfo infoBy:baseImage
                                  secondImage:image
                                         type:M80FingerprintTypeMin];
+            success = [self validInfo:info];
         }
         
-        if (![self validInfo:info])
+        if (!success)
         {
             _error = [NSError errorWithDomain:M80ERRORDOMAIN
                                          code:M80MergeErrorNotEnoughOverlap
@@ -100,14 +103,11 @@
 
 - (BOOL)validInfo:(M80ImageMergeInfo *)info
 {
-    CGFloat ignoreOffset = 64 * 2; // 忽略navbar
-    CGFloat thresholdPercentage = 0.1;
+    CGFloat thresholdPercentage = M80ImageThreshold;
     CGFloat threshold = MIN(info.firstImage.size.height, info.secondImage.size.height) * thresholdPercentage;
-    NSInteger firstOffset = info.firstImage.size.height - info.firstOffset;
     NSInteger length = info.length;
     return threshold > 0 &&
            length > (NSInteger)threshold &&
-           firstOffset >= ignoreOffset &&
            info.secondOffset > info.firstOffset;
 }
 
