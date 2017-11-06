@@ -20,7 +20,7 @@
 
     [UINavigationBar appearance].tintColor = [UIColor darkGrayColor];
     [CTAssetSelectionLabel appearance].cornerRadius = 12.5;
-    
+    NSLog(@"screen scale %lf",[[UIScreen mainScreen] scale]);
     return YES;
 }
 

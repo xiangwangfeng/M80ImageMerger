@@ -106,6 +106,7 @@
     CGFloat thresholdPercentage = M80ImageThreshold;
     CGFloat threshold = MIN(info.firstImage.size.height, info.secondImage.size.height) * thresholdPercentage;
     NSInteger length = info.length;
+    NSLog(@"validate info [%@] threshold %lf",info,threshold);
     return threshold > 0 &&
            length > (NSInteger)threshold &&
            info.secondOffset > info.firstOffset;

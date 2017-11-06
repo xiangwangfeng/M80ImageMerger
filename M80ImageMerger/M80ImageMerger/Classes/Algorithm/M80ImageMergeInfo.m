@@ -89,6 +89,13 @@
     return info;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"1st height %lf offset %zd 2nd height %lf offset %zd length %zd"
+            ,_firstImage.size.height,_firstOffset,
+            _secondImage.size.height,_secondOffset,
+            _length];
+}
 @end
 
 
