@@ -9,7 +9,7 @@
 #import "M80ImageGenerator.h"
 #import "M80ImageMergeInfo.h"
 #import "UIImage+M80.h"
-#import "M80Defs.h"
+#import "M80Constraint.h"
 
 @interface M80ImageGenerator ()
 @property (nonatomic,strong)    UIImage *firstImage;
@@ -103,12 +103,13 @@
 
 - (BOOL)validInfo:(M80ImageMergeInfo *)info
 {
-    CGFloat thresholdPercentage = M80ImageThreshold;
-    CGFloat threshold = MIN(info.firstImage.size.height, info.secondImage.size.height) * thresholdPercentage;
+    M80Constraint *contraint = [M80Constraint new];
+    contraint.minImageHeight = MIN(info.firstImage.size.height, info.secondImage.size.height);
+    NSInteger threshold = [contraint requiredThreshold];
     NSInteger length = info.length;
-    NSLog(@"validate info [%@] threshold %lf",info,threshold);
+    NSLog(@"validate info [%@] threshold %zd",info,threshold);
     return threshold > 0 &&
-           length > (NSInteger)threshold &&
+           length > threshold &&
            info.secondOffset > info.firstOffset;
 }
 

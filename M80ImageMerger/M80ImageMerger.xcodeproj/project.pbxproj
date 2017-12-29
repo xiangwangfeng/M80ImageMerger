@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D592EFA47D2987BC413A9AC /* libPods-M80ImageMerger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E3D775952E0285E8C6EFEB /* libPods-M80ImageMerger.a */; };
+		86F88AE21FF66C7E0084C3BE /* M80Constraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F88AE11FF66C7E0084C3BE /* M80Constraint.m */; };
 		E40F20101DC87D770063F4DC /* M80ImageMergeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E40F200F1DC87D770063F4DC /* M80ImageMergeInfo.m */; };
 		E412AD9F1C07F773004CC10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E412AD9E1C07F773004CC10B /* main.m */; };
 		E412ADA21C07F773004CC10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E412ADA11C07F773004CC10B /* AppDelegate.m */; };
@@ -76,6 +77,8 @@
 		353403597C3425388A619757 /* libPods-M80WebViewSaver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-M80WebViewSaver.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		414EF75E954CCD25DEDAA5B5 /* Pods-M80ImageMerger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M80ImageMerger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-M80ImageMerger/Pods-M80ImageMerger.debug.xcconfig"; sourceTree = "<group>"; };
 		7847E6243D2B9D02BCF6D321 /* Pods-M80WebViewSaver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M80WebViewSaver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-M80WebViewSaver/Pods-M80WebViewSaver.debug.xcconfig"; sourceTree = "<group>"; };
+		86F88AE01FF66C7E0084C3BE /* M80Constraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M80Constraint.h; sourceTree = "<group>"; };
+		86F88AE11FF66C7E0084C3BE /* M80Constraint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M80Constraint.m; sourceTree = "<group>"; };
 		B0D108C5A7CA2D9971D7C086 /* Pods-M80ImageMerger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M80ImageMerger.release.xcconfig"; path = "Pods/Target Support Files/Pods-M80ImageMerger/Pods-M80ImageMerger.release.xcconfig"; sourceTree = "<group>"; };
 		D3E3D775952E0285E8C6EFEB /* libPods-M80ImageMerger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-M80ImageMerger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40F200F1DC87D770063F4DC /* M80ImageMergeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80ImageMergeInfo.m; sourceTree = "<group>"; };
@@ -103,7 +106,6 @@
 		E48FFE3A1DF9058B009AA61A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E48FFE3D1DF905A8009AA61A /* M80MainInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80MainInteractor.h; sourceTree = "<group>"; };
 		E48FFE3E1DF905A8009AA61A /* M80MainInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M80MainInteractor.m; sourceTree = "<group>"; };
-		E4998A7B1F677AD50064B356 /* M80Defs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M80Defs.h; sourceTree = "<group>"; };
 		E499985E1EA73A350005CFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E49998601EA73A350005CFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4D9C36C1DC7239F004E7452 /* CTAssetsPageViewController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTAssetsPageViewController+Internal.h"; sourceTree = "<group>"; };
@@ -260,7 +262,8 @@
 				E412ADC11C08015D004CC10B /* M80ImageGenerator.m */,
 				E412ADC21C08015D004CC10B /* M80ImageMergeInfo.h */,
 				E40F200F1DC87D770063F4DC /* M80ImageMergeInfo.m */,
-				E4998A7B1F677AD50064B356 /* M80Defs.h */,
+				86F88AE01FF66C7E0084C3BE /* M80Constraint.h */,
+				86F88AE11FF66C7E0084C3BE /* M80Constraint.m */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				E4D9C3D11DC7239F004E7452 /* UIImage+CTAssetsPickerController.m in Sources */,
 				E412ADA21C07F773004CC10B /* AppDelegate.m in Sources */,
 				E4D9C3D71DC7239F004E7452 /* CTAssetScrollView.m in Sources */,
+				86F88AE21FF66C7E0084C3BE /* M80Constraint.m in Sources */,
 				E48FFE3F1DF905A8009AA61A /* M80MainInteractor.m in Sources */,
 				E4D9C3E71DC7239F004E7452 /* CTAssetsViewControllerTransition.m in Sources */,
 				E4D9C3E01DC7239F004E7452 /* CTAssetsNavigationController.m in Sources */,

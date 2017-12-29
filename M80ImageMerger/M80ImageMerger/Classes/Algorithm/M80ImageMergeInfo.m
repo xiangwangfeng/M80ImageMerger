@@ -7,9 +7,13 @@
 //
 
 #import "M80ImageMergeInfo.h"
-#import "M80Defs.h"
+#import "M80Constraint.h"
+
+#define M80PixelValueEqual(x,y) ((x) * 1.1 >= (y) && (x) * 0.9 <= (y))
+
 
 @implementation M80ImageMergeInfo
+
 
 + (instancetype)infoBy:(UIImage *)firstImage
            secondImage:(UIImage *)secondImage
@@ -18,6 +22,8 @@
     M80ImageMergeInfo *info = [[M80ImageMergeInfo alloc] init];
     info.firstImage = firstImage;
     info.secondImage = secondImage;
+    
+    M80Constraint *contraint = [M80Constraint new];
     
     
     M80ImageFingerprint *firstFingerprint = [M80ImageFingerprint fingerprint:firstImage type:type];
@@ -45,9 +51,9 @@
     
     //遍历并合并
     NSInteger length = 0,x = 0,y = 0;
-    for (NSInteger i = M80ImageIgnoreOffset; i < firstLinesCount; i ++)
+    for (NSInteger i = contraint.topOffset; i < firstLinesCount - contraint.bottomOffset; i ++)
     {
-        for (NSInteger  j = M80ImageIgnoreOffset; j < secondLinesCount; j++)
+        for (NSInteger  j = contraint.topOffset; j < secondLinesCount - contraint.bottomOffset; j++)
         {
             int64_t firstValue = [firstLines[i] longLongValue];
             int64_t secondValue = [secondLines[j] longLongValue];
@@ -96,6 +102,10 @@
             _secondImage.size.height,_secondOffset,
             _length];
 }
+
+
+
+
 @end
 
 
