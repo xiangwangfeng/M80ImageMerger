@@ -31,7 +31,7 @@ Icon 的意思是将 3 块图进行叠加。当然也[有人](https://github.com
 
 ## 使用方法
 
-参考如下[视频](https://nos.netease.com/nim/MTAxMTAwMg==/bmltYV8xMTAwOV8xNDk1Nzg4MTEwNjgzXzJiMTAzZDE0LWRlNzgtNDMwMi05OTBjLTM3NzY2ODJlYTQyMw==) 
+参考如下[视频](https://nos.netease.com/yx-web/c44174085943f8362ff95efef4e8ec46) 
 
 ## 已知问题列表
 
