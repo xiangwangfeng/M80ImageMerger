@@ -9,11 +9,12 @@
 #import "M80ImageMergeInfo.h"
 #import "M80Constraint.h"
 
-#define M80PixelValueEqual(x,y) ((x) * 1.1 >= (y) && (x) * 0.9 <= (y))
 
+@interface M80ImageMergeInfo ()
+@property (nonatomic,assign)   M80FingerprintType type;
+@end
 
 @implementation M80ImageMergeInfo
-
 
 + (instancetype)infoBy:(UIImage *)firstImage
            secondImage:(UIImage *)secondImage
@@ -22,6 +23,7 @@
     M80ImageMergeInfo *info = [[M80ImageMergeInfo alloc] init];
     info.firstImage = firstImage;
     info.secondImage = secondImage;
+    info.type = type;
     
     M80Constraint *contraint = [M80Constraint new];
     
@@ -47,8 +49,6 @@
         
     }
     
-    
-    
     //遍历并合并
     NSInteger length = 0,x = 0,y = 0;
     for (NSInteger i = contraint.topOffset; i < firstLinesCount - contraint.bottomOffset; i ++)
@@ -58,7 +58,8 @@
             int64_t firstValue = [firstLines[i] longLongValue];
             int64_t secondValue = [secondLines[j] longLongValue];
             
-            if (M80PixelValueEqual(firstValue,secondValue))
+            if ([info isX:firstValue
+                  equalTo:secondValue])
             {
                 int value = 0;
                 if (j != 0)
@@ -97,12 +98,26 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"1st height %lf offset %zd 2nd height %lf offset %zd length %zd"
+    return [NSString stringWithFormat:@"%@ 1st height %lf offset %zd 2nd height %lf offset %zd length %zd"
+            ,_type == M80FingerprintTypeCRC ? @"crc" : @"min"
             ,_firstImage.size.height,_firstOffset,
             _secondImage.size.height,_secondOffset,
             _length];
 }
 
+
+- (BOOL)isX:(int64_t)x
+    equalTo:(int64_t)y
+{
+    if (_type == M80FingerprintTypeCRC)
+    {
+        return x == y;
+    }
+    else
+    {
+        return x * 1.1 >= y && x * 0.9 <= y;
+    }
+}
 
 
 

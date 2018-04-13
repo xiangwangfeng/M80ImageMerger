@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UIImage (M80)
 - (UIImage *)m80_subImage:(CGRect)rect;
+
+- (UIImage *)m80_rangedImage:(NSRange)range;
+
+- (BOOL)m80_saveAsPngFile:(NSString *)path;
 @end

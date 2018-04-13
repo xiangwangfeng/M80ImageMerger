@@ -20,7 +20,52 @@
     }
     
     CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
-    UIImage *result = [UIImage imageWithCGImage:imageRef scale:self.scale orientation:self.imageOrientation];
+    UIImage *result = [UIImage imageWithCGImage:imageRef
+                                          scale:self.scale
+                                    orientation:self.imageOrientation];
     CGImageRelease(imageRef);
-    return result;}
+    return result;
+}
+
+- (UIImage *)m80_rangedImage:(NSRange)range
+{
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, self.scale);
+    
+    CGRect imageRect = CGRectMake(0, 0, self.size.width * self.scale,self.size.height * self.scale);
+    [self drawInRect:imageRect];
+    
+    CGFloat startY = (self.size.height - range.location) * self.scale;
+    CGFloat endY   = (self.size.height - range.location + range.length) * self.scale;
+    CGFloat width  = imageRect.size.width;
+    
+    {
+        UIBezierPath *path = [[UIBezierPath alloc] init];
+        [path moveToPoint:CGPointMake(0,startY)];
+        [path addLineToPoint:CGPointMake(width, startY)];
+        [[UIColor redColor] setStroke];
+        [path stroke];
+    }
+    
+    {
+        
+        UIBezierPath *path = [[UIBezierPath alloc] init];
+        [path moveToPoint:CGPointMake(0,endY)];
+        [path addLineToPoint:CGPointMake(width, endY)];
+        [[UIColor redColor] setStroke];
+        [path stroke];
+    }
+    
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return result;
+    
+}
+
+- (BOOL)m80_saveAsPngFile:(NSString *)path
+{
+    NSData *data = UIImagePNGRepresentation(self);
+    return data && [data writeToFile:path
+                          atomically:YES];
+    
+}
 @end

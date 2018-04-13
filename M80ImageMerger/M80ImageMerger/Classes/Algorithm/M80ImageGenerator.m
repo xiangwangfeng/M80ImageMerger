@@ -119,6 +119,31 @@
     {
         return nil;
     }
+    
+#if DEBUG
+    
+    {
+        NSString *path = NSTemporaryDirectory();
+        NSString *prefix = [NSString stringWithFormat:@"%@",[NSDate date]];
+        NSLog(@"view images at %@ with prefix %@",path,prefix);
+        for (NSInteger i = 0; i < [_infos count]; i++)
+        {
+            M80ImageMergeInfo *info = [_infos objectAtIndex:i];
+            UIImage *firstImage = [info.firstImage m80_rangedImage:NSMakeRange(info.firstOffset, info.length)];
+            NSString *firstImagePath = [NSString stringWithFormat:@"%@/%@_%zd_first.png",path,prefix,i];
+            [firstImage m80_saveAsPngFile:firstImagePath];
+            
+            
+            UIImage *secondImage = [info.secondImage m80_rangedImage:NSMakeRange(info.secondOffset, info.length)];
+            NSString *secondImagePath = [NSString stringWithFormat:@"%@/%@_%zd_second.png",path,prefix,i];
+            [secondImage m80_saveAsPngFile:secondImagePath];
+        }
+    }
+
+    
+    
+#endif
+    
     M80ImageMergeInfo *drawInfo = [_infos firstObject];
     [_infos removeObjectAtIndex:0];
     
