@@ -11,25 +11,19 @@
 
 
 @interface M80ImageMergeInfo ()
-@property (nonatomic,assign)   M80FingerprintType type;
+
 @end
 
 @implementation M80ImageMergeInfo
 
-+ (instancetype)infoBy:(UIImage *)firstImage
-           secondImage:(UIImage *)secondImage
-                  type:(M80FingerprintType)type
+- (void)calc
 {
-    M80ImageMergeInfo *info = [[M80ImageMergeInfo alloc] init];
-    info.firstImage = firstImage;
-    info.secondImage = secondImage;
-    info.type = type;
-    
     M80Constraint *contraint = [M80Constraint new];
     
-    
-    M80ImageFingerprint *firstFingerprint = [M80ImageFingerprint fingerprint:firstImage type:type];
-    M80ImageFingerprint *secondFingerprint= [M80ImageFingerprint fingerprint:secondImage type:type];
+    M80ImageFingerprint *firstFingerprint = [M80ImageFingerprint fingerprint:_firstImage
+                                                                        type:_type];
+    M80ImageFingerprint *secondFingerprint= [M80ImageFingerprint fingerprint:_secondImage
+                                                                        type:_type];
     
     NSArray *firstLines = [firstFingerprint lines];
     NSArray *secondLines= [secondFingerprint lines];
@@ -58,7 +52,7 @@
             int64_t firstValue = [firstLines[i] longLongValue];
             int64_t secondValue = [secondLines[j] longLongValue];
             
-            if ([info isX:firstValue
+            if ([self isX:firstValue
                   equalTo:secondValue])
             {
                 int value = 0;
@@ -89,12 +83,13 @@
     
     
     //更新数据
-    info.length = length;
-    info.firstOffset = firstImage.size.height - (x - length + 1);
-    info.secondOffset= secondImage.size.height - (y - length + 1);
+    _length = length;
+    _firstOffset = _firstImage.size.height - (x - length + 1);
+    _secondOffset= _secondImage.size.height - (y - length + 1);
     
-    return info;
 }
+
+
 
 - (NSString *)description
 {
@@ -119,8 +114,5 @@
     }
 }
 
-
-
 @end
-
 

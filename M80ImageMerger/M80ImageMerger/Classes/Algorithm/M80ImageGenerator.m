@@ -72,17 +72,20 @@
                   image.scale == baseImage.scale;
     if (doFeed)
     {
-        M80ImageMergeInfo *info = [M80ImageMergeInfo infoBy:baseImage
-                                                secondImage:image
-                                                       type:M80FingerprintTypeCRC];
+        M80ImageMergeInfo *info = [M80ImageMergeInfo new];
+        info.firstImage         = baseImage;
+        info.secondImage        = image;
+        info.type               = M80FingerprintTypeCRC;
+        [info calc];
+        
         BOOL success =[self validInfo:info];
         
         if (!success)
         {
-            // CRC 这种较严格匹配失败的话，尝试下比较宽松的匹配 （容易出现误匹配
-            info = [M80ImageMergeInfo infoBy:baseImage
-                                 secondImage:image
-                                        type:M80FingerprintTypeMin];
+            //CRC 这种较严格匹配失败的话，尝试下比较宽松的匹配 （容易出现误匹配
+            info.type = M80FingerprintTypeMin;
+            [info calc];
+            
             success = [self validInfo:info];
         }
         

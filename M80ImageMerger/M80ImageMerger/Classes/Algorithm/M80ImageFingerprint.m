@@ -8,6 +8,7 @@
 
 #import "M80ImageFingerprint.h"
 #import <zlib.h>
+#import "UIImage+M80.h"
 
 
 @interface M80ImageFingerprint ()
@@ -30,7 +31,7 @@
 {
     if (_type == M80FingerprintTypeCRC)
     {
-        [self calcCRCImage:image];
+        [self calcCRCImage:[image m80_gradientImage]];
     }
     else if(_type == M80FingerprintTypeMin)
     {

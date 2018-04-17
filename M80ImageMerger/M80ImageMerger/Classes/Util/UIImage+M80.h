@@ -15,4 +15,6 @@
 - (UIImage *)m80_rangedImage:(NSRange)range;
 
 - (BOOL)m80_saveAsPngFile:(NSString *)path;
+
+- (UIImage *)m80_gradientImage;
 @end
