@@ -78,7 +78,7 @@
         info.type               = M80FingerprintTypeCRC;
         [info calc];
         
-        BOOL success =[self validInfo:info];
+        BOOL success =[M80Constraint isInfoValid:info];
         
         if (!success)
         {
@@ -86,7 +86,7 @@
             info.type = M80FingerprintTypeHistogram;
             [info calc];
             
-            success = [self validInfo:info];
+            success = [M80Constraint isInfoValid:info];
         }
         
         if (!success)
@@ -104,17 +104,6 @@
     return doFeed;
 }
 
-- (BOOL)validInfo:(M80ImageMergeInfo *)info
-{
-    M80Constraint *contraint = [M80Constraint new];
-    contraint.minImageHeight = MIN(info.firstImage.size.height, info.secondImage.size.height);
-    NSInteger threshold = [contraint requiredThreshold];
-    NSInteger length = info.length;
-    NSLog(@"validate info [%@] threshold %zd",info,threshold);
-    return threshold > 0 &&
-           length > threshold &&
-           info.secondOffset > info.firstOffset;
-}
 
 - (UIImage *)generate
 {

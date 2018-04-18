@@ -18,8 +18,6 @@
 
 - (void)calc
 {
-    M80Constraint *contraint = [M80Constraint new];
-    
     M80ImageFingerprint *firstFingerprint = [M80ImageFingerprint fingerprint:_firstImage
                                                                         type:_type];
     M80ImageFingerprint *secondFingerprint= [M80ImageFingerprint fingerprint:_secondImage
@@ -45,9 +43,9 @@
     
     //遍历并合并
     NSInteger length = 0,x = 0,y = 0;
-    for (NSInteger i = contraint.topOffset; i < firstLinesCount - contraint.bottomOffset; i ++)
+    for (NSInteger i = [M80Constraint topOffset]; i < firstLinesCount - [M80Constraint bottomOffset]; i ++)
     {
-        for (NSInteger  j = contraint.topOffset; j < secondLinesCount - contraint.bottomOffset; j++)
+        for (NSInteger  j = [M80Constraint topOffset]; j < secondLinesCount - [M80Constraint bottomOffset]; j++)
         {
             int64_t firstValue = [firstLines[i] longLongValue];
             int64_t secondValue = [secondLines[j] longLongValue];

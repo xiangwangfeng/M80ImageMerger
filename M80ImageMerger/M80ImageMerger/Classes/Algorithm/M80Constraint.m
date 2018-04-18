@@ -7,10 +7,11 @@
 //
 
 #import "M80Constraint.h"
+#import "M80ImageMergeInfo.h"
 
 
 @implementation M80Constraint
-- (NSInteger)topOffset
++ (NSInteger)topOffset
 {
     if ([UIScreen mainScreen].bounds.size.height == 812)
     {
@@ -22,7 +23,7 @@
     }
 }
 
-- (NSInteger)bottomOffset
++ (NSInteger)bottomOffset
 {
     if ([UIScreen mainScreen].bounds.size.height == 812)
     {
@@ -34,9 +35,27 @@
     }
 }
 
-- (NSInteger)requiredThreshold
++ (BOOL)isInfoValid:(M80ImageMergeInfo *)info
 {
-    return (NSInteger)((self.minImageHeight - self.topOffset - self.bottomOffset) * 0.05);
+    NSInteger threshold = [M80Constraint requiredThreshold:info];
+    NSInteger length = info.length;
+    NSLog(@"validate info [%@] threshold %zd",info,threshold);
+    return threshold > 0 &&
+    length > threshold &&
+    info.secondOffset > info.firstOffset;
 }
 
+
++ (NSInteger)requiredThreshold:(M80ImageMergeInfo *)info
+{
+    NSInteger minImageHeight = MIN(info.firstImage.size.height, info.secondImage.size.height);
+    double factor = [M80Constraint shouldUseGradientImage:info.type] ? 0.1618 : 0.0618;
+    return (NSInteger)((minImageHeight - [M80Constraint topOffset] - [M80Constraint bottomOffset]) * factor);
+    
+}
+
++ (BOOL)shouldUseGradientImage:(M80FingerprintType)type
+{
+    return type == M80FingerprintTypeCRC && [[UIScreen mainScreen] scale] >= 3.0;
+}
 @end

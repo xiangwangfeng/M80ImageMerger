@@ -9,6 +9,7 @@
 #import "M80ImageFingerprint.h"
 #import <zlib.h>
 #import "UIImage+M80.h"
+#import "M80Constraint.h"
 
 
 @interface M80ImageFingerprint ()
@@ -29,15 +30,14 @@
 
 - (void)calc:(UIImage *)image
 {
-    
+    UIImage *source = [M80Constraint shouldUseGradientImage:_type] ? [image m80_gradientImage] : image;
     if (_type == M80FingerprintTypeCRC)
     {
-        UIImage *source = [[UIScreen mainScreen] scale] < 3 ? image : [image m80_gradientImage];
         [self calcCRCImage:source];
     }
     else if(_type == M80FingerprintTypeHistogram)
     {
-        [self calcHistImage:image];
+        [self calcHistImage:source];
     }
 }
 
