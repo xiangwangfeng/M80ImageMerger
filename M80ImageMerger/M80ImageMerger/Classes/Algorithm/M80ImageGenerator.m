@@ -83,7 +83,7 @@
         if (!success)
         {
             //CRC 这种较严格匹配失败的话，尝试下比较宽松的匹配 （容易出现误匹配
-            info.type = M80FingerprintTypeMin;
+            info.type = M80FingerprintTypeHistogram;
             [info calc];
             
             success = [self validInfo:info];

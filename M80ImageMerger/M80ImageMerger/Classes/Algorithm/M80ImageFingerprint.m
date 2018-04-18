@@ -29,14 +29,15 @@
 
 - (void)calc:(UIImage *)image
 {
-    UIImage *input = [[UIScreen mainScreen] scale] < 3 ? image : [image m80_gradientImage];
+    
     if (_type == M80FingerprintTypeCRC)
     {
-        [self calcCRCImage:input];
+        UIImage *source = [[UIScreen mainScreen] scale] < 3 ? image : [image m80_gradientImage];
+        [self calcCRCImage:source];
     }
-    else if(_type == M80FingerprintTypeMin)
+    else if(_type == M80FingerprintTypeHistogram)
     {
-        [self calcMinImage:input];
+        [self calcHistImage:image];
     }
 }
 
@@ -59,7 +60,7 @@
     CFRelease(pixelData);
 }
 
-- (void)calcMinImage:(UIImage *)image
+- (void)calcHistImage:(UIImage *)image
 {
     NSMutableArray *array = [NSMutableArray array];
     CFDataRef pixelData = CGDataProviderCopyData(CGImageGetDataProvider(image.CGImage));
@@ -97,6 +98,7 @@
             return  first < second ? NSOrderedAscending : NSOrderedDescending;
         }];
         
+        //取得特殊的点作为当前行的特征值
         NSInteger print = 255;
         NSInteger count = [numbers count] * 0.5;
         

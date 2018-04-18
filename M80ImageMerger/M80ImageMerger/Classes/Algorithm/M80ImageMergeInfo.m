@@ -94,7 +94,7 @@
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"%@ 1st height %lf offset %zd 2nd height %lf offset %zd length %zd"
-            ,_type == M80FingerprintTypeCRC ? @"crc" : @"min"
+            ,_type == M80FingerprintTypeCRC ? @"crc" : @"hist"
             ,_firstImage.size.height,_firstOffset,
             _secondImage.size.height,_secondOffset,
             _length];
