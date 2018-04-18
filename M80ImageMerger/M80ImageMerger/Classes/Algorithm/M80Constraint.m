@@ -49,7 +49,7 @@
 + (NSInteger)requiredThreshold:(M80ImageMergeInfo *)info
 {
     NSInteger minImageHeight = MIN(info.firstImage.size.height, info.secondImage.size.height);
-    double factor = [M80Constraint shouldUseGradientImage:info.type] ? 0.1618 : 0.0618;
+    double factor = [M80Constraint shouldUseGradientImage:info.type] ? 0.10618 : 0.0618;
     return (NSInteger)((minImageHeight - [M80Constraint topOffset] - [M80Constraint bottomOffset]) * factor);
     
 }
