@@ -29,13 +29,14 @@
 
 - (void)calc:(UIImage *)image
 {
+    UIImage *input = [[UIScreen mainScreen] scale] < 3 ? image : [image m80_gradientImage];
     if (_type == M80FingerprintTypeCRC)
     {
-        [self calcCRCImage:[image m80_gradientImage]];
+        [self calcCRCImage:input];
     }
     else if(_type == M80FingerprintTypeMin)
     {
-        [self calcMinImage:image];
+        [self calcMinImage:input];
     }
 }
 
