@@ -39,7 +39,7 @@
 {
     NSInteger threshold = [M80Constraint requiredThreshold:info];
     NSInteger length = info.length;
-    NSLog(@"validate info [%@] threshold %zd",info,threshold);
+    NSLog(@"validate info [%@] threshold %d",info,(int)threshold);
     return threshold > 0 &&
     length > threshold &&
     info.secondOffset > info.firstOffset;
