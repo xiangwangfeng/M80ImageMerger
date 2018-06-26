@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "CTAssetSelectionLabel.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    [Fabric with:@[[Answers class],[Crashlytics class]]];
+    
     [UINavigationBar appearance].tintColor = [UIColor darkGrayColor];
     [CTAssetSelectionLabel appearance].cornerRadius = 12.5;
     NSLog(@"screen scale %lf",[[UIScreen mainScreen] scale]);
