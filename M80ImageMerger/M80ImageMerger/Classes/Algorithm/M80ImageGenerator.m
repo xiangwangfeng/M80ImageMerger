@@ -72,18 +72,21 @@
                   image.scale == baseImage.scale;
     if (doFeed)
     {
-        M80ImageMergeInfo *info = [M80ImageMergeInfo infoBy:baseImage
-                                                secondImage:image
-                                                       type:M80FingerprintTypeCRC];
-        BOOL success =[self validInfo:info];
+        M80ImageMergeInfo *info = [M80ImageMergeInfo new];
+        info.firstImage         = baseImage;
+        info.secondImage        = image;
+        info.type               = M80FingerprintTypeCRC;
+        [info calc];
+        
+        BOOL success =[M80Constraint isInfoValid:info];
         
         if (!success)
         {
-            // CRC 这种较严格匹配失败的话，尝试下比较宽松的匹配 （容易出现误匹配
-            info = [M80ImageMergeInfo infoBy:baseImage
-                                 secondImage:image
-                                        type:M80FingerprintTypeMin];
-            success = [self validInfo:info];
+            //CRC 这种较严格匹配失败的话，尝试下比较宽松的匹配 （容易出现误匹配
+            info.type = M80FingerprintTypeHistogram;
+            [info calc];
+            
+            success = [M80Constraint isInfoValid:info];
         }
         
         if (!success)
@@ -101,17 +104,6 @@
     return doFeed;
 }
 
-- (BOOL)validInfo:(M80ImageMergeInfo *)info
-{
-    M80Constraint *contraint = [M80Constraint new];
-    contraint.minImageHeight = MIN(info.firstImage.size.height, info.secondImage.size.height);
-    NSInteger threshold = [contraint requiredThreshold];
-    NSInteger length = info.length;
-    NSLog(@"validate info [%@] threshold %zd",info,threshold);
-    return threshold > 0 &&
-           length > threshold &&
-           info.secondOffset > info.firstOffset;
-}
 
 - (UIImage *)generate
 {

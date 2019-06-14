@@ -11,25 +11,17 @@
 
 
 @interface M80ImageMergeInfo ()
-@property (nonatomic,assign)   M80FingerprintType type;
+
 @end
 
 @implementation M80ImageMergeInfo
 
-+ (instancetype)infoBy:(UIImage *)firstImage
-           secondImage:(UIImage *)secondImage
-                  type:(M80FingerprintType)type
+- (void)calc
 {
-    M80ImageMergeInfo *info = [[M80ImageMergeInfo alloc] init];
-    info.firstImage = firstImage;
-    info.secondImage = secondImage;
-    info.type = type;
-    
-    M80Constraint *contraint = [M80Constraint new];
-    
-    
-    M80ImageFingerprint *firstFingerprint = [M80ImageFingerprint fingerprint:firstImage type:type];
-    M80ImageFingerprint *secondFingerprint= [M80ImageFingerprint fingerprint:secondImage type:type];
+    M80ImageFingerprint *firstFingerprint = [M80ImageFingerprint fingerprint:_firstImage
+                                                                        type:_type];
+    M80ImageFingerprint *secondFingerprint= [M80ImageFingerprint fingerprint:_secondImage
+                                                                        type:_type];
     
     NSArray *firstLines = [firstFingerprint lines];
     NSArray *secondLines= [secondFingerprint lines];
@@ -51,14 +43,14 @@
     
     //遍历并合并
     NSInteger length = 0,x = 0,y = 0;
-    for (NSInteger i = contraint.topOffset; i < firstLinesCount - contraint.bottomOffset; i ++)
+    for (NSInteger i = [M80Constraint topOffset]; i < firstLinesCount - [M80Constraint bottomOffset]; i ++)
     {
-        for (NSInteger  j = contraint.topOffset; j < secondLinesCount - contraint.bottomOffset; j++)
+        for (NSInteger  j = [M80Constraint topOffset]; j < secondLinesCount - [M80Constraint bottomOffset]; j++)
         {
             int64_t firstValue = [firstLines[i] longLongValue];
             int64_t secondValue = [secondLines[j] longLongValue];
             
-            if ([info isX:firstValue
+            if ([self isX:firstValue
                   equalTo:secondValue])
             {
                 int value = 0;
@@ -89,20 +81,21 @@
     
     
     //更新数据
-    info.length = length;
-    info.firstOffset = firstImage.size.height - (x - length + 1);
-    info.secondOffset= secondImage.size.height - (y - length + 1);
+    _length = length;
+    _firstOffset = _firstImage.size.height - (x - length + 1);
+    _secondOffset= _secondImage.size.height - (y - length + 1);
     
-    return info;
 }
+
+
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ 1st height %lf offset %zd 2nd height %lf offset %zd length %zd"
-            ,_type == M80FingerprintTypeCRC ? @"crc" : @"min"
-            ,_firstImage.size.height,_firstOffset,
-            _secondImage.size.height,_secondOffset,
-            _length];
+    return [NSString stringWithFormat:@"%@ 1st height %lf offset %d 2nd height %lf offset %d length %d"
+            ,_type == M80FingerprintTypeCRC ? @"crc" : @"hist"
+            ,_firstImage.size.height,(int)_firstOffset,
+            _secondImage.size.height,(int)_secondOffset,
+            (int)_length];
 }
 
 
@@ -119,8 +112,5 @@
     }
 }
 
-
-
 @end
-
 

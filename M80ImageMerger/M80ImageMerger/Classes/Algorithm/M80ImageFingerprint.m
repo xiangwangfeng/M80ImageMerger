@@ -8,6 +8,8 @@
 
 #import "M80ImageFingerprint.h"
 #import <zlib.h>
+#import "UIImage+M80.h"
+#import "M80Constraint.h"
 
 
 @interface M80ImageFingerprint ()
@@ -28,13 +30,14 @@
 
 - (void)calc:(UIImage *)image
 {
+    UIImage *source = [M80Constraint shouldUseGradientImage:_type] ? [image m80_gradientImage] : image;
     if (_type == M80FingerprintTypeCRC)
     {
-        [self calcCRCImage:image];
+        [self calcCRCImage:source];
     }
-    else if(_type == M80FingerprintTypeMin)
+    else if(_type == M80FingerprintTypeHistogram)
     {
-        [self calcMinImage:image];
+        [self calcHistImage:source];
     }
 }
 
@@ -57,7 +60,7 @@
     CFRelease(pixelData);
 }
 
-- (void)calcMinImage:(UIImage *)image
+- (void)calcHistImage:(UIImage *)image
 {
     NSMutableArray *array = [NSMutableArray array];
     CFDataRef pixelData = CGDataProviderCopyData(CGImageGetDataProvider(image.CGImage));
@@ -95,6 +98,7 @@
             return  first < second ? NSOrderedAscending : NSOrderedDescending;
         }];
         
+        //取得特殊的点作为当前行的特征值
         NSInteger print = 255;
         NSInteger count = [numbers count] * 0.5;
         

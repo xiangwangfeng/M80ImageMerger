@@ -5,6 +5,8 @@ target 'M80ImageMerger' do
   	pod ‘PureLayout’
 	pod 'SVProgressHUD'
 	pod 'Toast'
+    pod 'Fabric'
+    pod 'Crashlytics'
 
 
 end

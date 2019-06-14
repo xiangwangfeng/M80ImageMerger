@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "M80ImageFingerprint.h"
+@class M80ImageMergeInfo;
 
 @interface M80Constraint : NSObject
 @property (nonatomic,assign)    CGFloat minImageHeight;
 
-- (NSInteger)topOffset;
-- (NSInteger)bottomOffset;
-- (NSInteger)requiredThreshold;
++ (NSInteger)topOffset;
++ (NSInteger)bottomOffset;
++ (BOOL)isInfoValid:(M80ImageMergeInfo *)info;
++ (BOOL)shouldUseGradientImage:(M80FingerprintType)type;
 @end

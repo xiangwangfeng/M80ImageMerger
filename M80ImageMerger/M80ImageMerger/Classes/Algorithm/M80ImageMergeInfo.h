@@ -10,17 +10,21 @@
 #import <UIKit/UIKit.h>
 #import "M80ImageFingerprint.h"
 
+
+
+
 @interface M80ImageMergeInfo : NSObject
+//input
 @property (nonatomic,strong)    UIImage     *firstImage;
 @property (nonatomic,strong)    UIImage     *secondImage;
+@property (nonatomic,assign)    M80FingerprintType type;
+
+//output
 @property (nonatomic,assign)    NSInteger   firstOffset;    //为计算方便,此处为从 bottom 计算的 offset
 @property (nonatomic,assign)    NSInteger   secondOffset;   //为计算方便,此处为从 bottom 计算的 offset
 @property (nonatomic,assign)    NSInteger   length;         //重合部分长度
 
-
-+ (instancetype)infoBy:(UIImage *)firstImage
-           secondImage:(UIImage *)secondImage
-                  type:(M80FingerprintType)type;
+- (void)calc;
 @end
 
 

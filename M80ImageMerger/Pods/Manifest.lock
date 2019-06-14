@@ -1,18 +1,33 @@
 PODS:
+  - Crashlytics (3.10.2):
+    - Fabric (~> 1.7.7)
+  - Fabric (1.7.7)
   - PureLayout (3.0.2)
   - SVProgressHUD (2.1.2)
   - Toast (3.1.0)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - PureLayout
   - SVProgressHUD
   - Toast
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - Fabric
+    - PureLayout
+    - SVProgressHUD
+    - Toast
+
 SPEC CHECKSUMS:
+  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
+  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
 
-PODFILE CHECKSUM: ea2e7b621b09fa7b06c8e2fecc0553cc3ebf131a
+PODFILE CHECKSUM: 5b86f05e554593450e4d75bb74ca05124c2d0305
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.3

@@ -11,7 +11,7 @@
 
 typedef enum : NSUInteger {
     M80FingerprintTypeCRC,
-    M80FingerprintTypeMin,  //实验性方案
+    M80FingerprintTypeHistogram,  
 } M80FingerprintType;
 
 
